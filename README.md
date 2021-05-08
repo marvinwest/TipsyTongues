@@ -10,24 +10,21 @@ Design:
 - Different texts to read with the option to get a new text
 - Results: Maybe as some kind of scale
 
-</br>
-</br>
+
 Front End:
 - cross compiled -> runs across multiple platforms (IOS, Android, Microsoft (opt.))
 - Xamarin (C#)
 - Visual Studio as IDE
 - .Forms as the open source UI framework in XAML with CodeBehind in C#
 
-</br>
-</br>
+
 Back End:
 - Uses Python Flask for serverside developing
 - Uses Speech-Recognition-API to get Text from audiofile
 - Compares recognized Text with given Sentences (that had to be read by the user)
 - Return Level of drunkenness based on the comparison
 
-</br>
-</br>
+
 Designer: Tabea Graszynski</br>
 Frontend: Jule Emily Buschmann</br>
 Backend: Marvin Westphal</br>
