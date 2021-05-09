@@ -1,0 +1,69 @@
+---
+openapi: 3.0.1
+servers:
+  - url: Add URL here
+    description: PRODUCTION (Internet)
+info:
+  title: TipsyTongues API
+  description: |
+    Get the Level of Drunkenness through Speech Recognition
+
+    All endpoints of this API require authorization with a Bearer JWT token - ask the API provider for details how to obtain the token.
+  version: 0.0.1
+  contact:
+    name: to be declared
+tags:
+  - name: Recognition
+paths:
+  "/recognition/audio":
+    post:
+      tags: [Recognition]
+      summary: Get the Level of Drunkenness
+      operationId: recogniseDrunkenness
+      requestBody:
+        description: |
+          The request body contains the sentence the user had to read and an Audiofile of the user reading this sentence
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/RecognitionRequest"
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RecognitionResponse"
+        "400":
+          description: |-
+            Bad Request: if the request cannot be processed due to a client error.
+
+            Examples of client errors are: invalid request syntax, invalid or empty data
+
+components:
+  schemas:
+    RecognitionRequest:
+      description: Sentence the user had to read and audioFile.
+      type: object
+      required:
+        - sentence
+        - audioFile
+      properties:
+        sentence:
+          type: string
+          description: Sentence the user has to read
+        audioFile:
+          type: string
+          format: binary
+          description: Audiofile of the sentence read by the user
+    RecognitionResponse:
+      description: Response to a valid RecognitionRequest
+      type: object
+      required:
+        - levelOfDrunkenness
+      properties:
+        levelOfDrunkenness:
+          type: integer
+          minimum: 0
+          maximum: 5
+          description: Scale of the level of drunkenness, detected by spelling mistakes in Speech-Recognition
