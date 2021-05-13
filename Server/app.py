@@ -1,7 +1,10 @@
 from flask import Flask, request
-from flask_restful import Api, Resource
+from flask_cors import CORS
 
 app = Flask(__name__)
+# CORS allows other programming languages to send a request
+# that can be processed
+CORS(app)
 
 # extract sentence from incoming request
 # extract the audiofile from incoming request
@@ -13,7 +16,7 @@ def post_recognition():
 
 	return {"levelOfDrunkenness" : 3}
 
-# Debug = True only for testpurposes
+# app.run(<Debug == True>) only for testpurposes
+# Do not use it in deployment
 if __name__ == "__main__":
-	print("Server started")
-	app.run(debug=True)
+	app.run()
