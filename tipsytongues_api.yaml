@@ -1,8 +1,8 @@
 ---
 openapi: 3.0.1
 servers:
-  - url: Add URL here
-    description: PRODUCTION (Internet)
+  - url: https://tipsy-tongues.herokuapp.com
+    description: DEVELOPMENT (Internet)
 info:
   title: TipsyTongues API
   description: |
