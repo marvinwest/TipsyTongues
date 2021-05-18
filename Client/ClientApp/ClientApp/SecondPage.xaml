@@ -4,6 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="ClientApp.SecondPage">
     <ContentPage.Content>
-        
+        <StackLayout Margin="20,35,20,20">
+
+    
+      <Image Source="https://www.horizont.net/news/media/11/bitburger.jpg-109284-detailnp.jpeg" />
+      <Label x:Name="TipsyTongues"
+               Text="Tipsy Tongues"
+               FontSize="Title"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center" />
+
+    </StackLayout>
     </ContentPage.Content>
 </ContentPage>

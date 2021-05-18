@@ -10,6 +10,7 @@ namespace ClientApp
         public SecondPage()
         {
             InitializeComponent();
+
         }
     }
 }
