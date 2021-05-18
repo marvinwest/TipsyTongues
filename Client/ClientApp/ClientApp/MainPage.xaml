@@ -3,11 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientApp.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Hello World" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        
+    <StackLayout Margin="20,35,20,20">
+
+    
+      <Image Source="https://www.horizont.net/news/media/11/bitburger.jpg-109284-detailnp.jpeg" />
+      <Label x:Name="TipsyTongues"
+               Text="Tipsy Tongues"
+               FontSize="Title"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center" />
+
+      <Button Text="press to start"
+               FontSize="Large"
+               VerticalOptions="CenterAndExpand"
+               Font=""
+               BackgroundColor="WhiteSmoke"
+               HorizontalOptions="Center"
+               TextColor="Orange"
+               BorderColor="Orange"
+               BorderWidth="2"
+               CornerRadius="100"
+               WidthRequest="500"
+               HeightRequest="80"
+               Clicked="NavigateButton_OnClicked"/>
+
+
     </StackLayout>
 
 </ContentPage>
