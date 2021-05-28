@@ -34,5 +34,7 @@
 	<string>ClientApp</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need this permission in order to analyse your drunkenness</string>
 </dict>
 </plist>

@@ -1,4 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -6,13 +8,13 @@
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
 
-    
-      <Image Source="https://www.horizont.net/news/media/11/bitburger.jpg-109284-detailnp.jpeg" />
-      <Label x:Name="TipsyTongues"
-               Text="Tipsy Tongues"
-               FontSize="Title"
-               VerticalOptions="CenterAndExpand"
-               HorizontalOptions="Center" />
+   
+
+    <Button Text="Start/Stop recording" Pressed="OnButtonPressed"
+            Released="OnButtonReleased"
+            VerticalOptions="End"
+            />
+
 
     </StackLayout>
     </ContentPage.Content>

@@ -24,6 +24,7 @@ namespace ClientApp.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
     }
 
    
