@@ -17,8 +17,8 @@ def post_recognition():
 	# mocked for now
 	# TODO: check: Results are quite high if german audio is used with english language_code
 	# TODO: build full resultClass regarding response from Azure
-	language_code = "en-US"
-	sentence = request.form.get("sentence")
+	language_code = "de-DE"
+	sentence = request.form["sentence"]
 	audio_file = request.files.get("audioFile")
 
 	recognition_result = recognizer.recognize_pronunciation(language_code, sentence, audio_file)
@@ -33,7 +33,7 @@ def __build_response(recognition_result):
 		"fluency": recognition_result.get_fluency_score(),
 		"aggregated": recognition_result.get_pronunciation_score()}
 
-# app.run(<Debug == True>) only for testpurposes
+# app.run(<debug = True>) only for testpurposes
 # Do not use it in deployment
 if __name__ == "__main__":
-	app.run()
+	app.run(debug = True)
