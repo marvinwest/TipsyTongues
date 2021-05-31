@@ -1,7 +1,9 @@
 from flask import Flask, request
 from flask_cors import CORS
+import os
 
 import pronunciation_recognizer as recognizer
+import wave_file_converter as converter
 
 app = Flask(__name__)
 # CORS allows other programming languages to send a request
@@ -15,13 +17,16 @@ CORS(app)
 def post_recognition():
 	# language code to determine in which language the pronunciation regocnition should be
 	# mocked for now
-	# TODO: check: Results are quite high if german audio is used with english language_code
-	# TODO: build full resultClass regarding response from Azure
 	language_code = "de-DE"
 	sentence = request.form["sentence"]
 	audio_file = request.files.get("audioFile")
+	filename = "pronunciation_file.wav"
+	converter.convert_to_wave_and_save(filename, audio_file)
 
-	recognition_result = recognizer.recognize_pronunciation(language_code, sentence, audio_file)
+	recognition_result = recognizer.recognize_pronunciation(language_code, sentence, filename)
+
+	# delete temporary file after recognition
+	os.remove(filename)
 
 	print(__build_response(recognition_result))
 	return {"levelOfDrunkenness" : 3}
