@@ -16,11 +16,14 @@ namespace ClientApp
         private readonly AudioPlayer audioPlayer = new AudioPlayer();
 
         private String audioFilePath;
+        private String sentence;
 
-        public ThirdPage(String audioFilePath)
+
+        public ThirdPage(String audioFilePath, String sentence)
         {
             InitializeComponent();
             this.audioFilePath = audioFilePath;
+            this.sentence = sentence;
         }
 
         void PlayRecording(object sender, EventArgs e)
