@@ -13,6 +13,11 @@ namespace ClientApp
     {
         private readonly AudioRecorderService AudioRecorderService = new AudioRecorderService();
 
+        //mocked for now
+        //TODO: add outputtext to represent sentence in SecondPage.xaml,
+        //  Let textfield be generated via Method on loading of page and on new Sentence Button.
+        //  method should take one sentence randomly out of an array of sentences.
+        private String sentence;
         public SecondPage()
         {
             InitializeComponent();
@@ -24,7 +29,7 @@ namespace ClientApp
         {
             if (AudioRecorderService.IsRecording)
             {
-                AudioRecorderService.StopRecording();     
+                AudioRecorderService.StopRecording();
             }
             else
             {
@@ -37,8 +42,10 @@ namespace ClientApp
         private async void OnButtonReleased (object sender, EventArgs e)
         {
             String audioFilePath = AudioRecorderService.GetAudioFilePath();
-
-            await Navigation.PushAsync(new ThirdPage(audioFilePath));
+            
+            //delete this mocked sentence when outputtext is implemented, see TODO above
+            this.sentence = "I am a mocked Sentence for now";
+            await Navigation.PushAsync(new ThirdPage(audioFilePath, sentence));
         }
 
         //private async void Shuffle_OnClicked(object sender, EventArgs e)
