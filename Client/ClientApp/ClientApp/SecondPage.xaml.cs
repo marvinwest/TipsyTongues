@@ -15,7 +15,9 @@ namespace ClientApp
 
         public SecondPage()
         {
-            InitializeComponent();   
+            InitializeComponent();
+
+            
         }
 
         void OnButtonPressed (System.Object sender, System.EventArgs e)
@@ -39,5 +41,16 @@ namespace ClientApp
             await Navigation.PushAsync(new ThirdPage(audioFilePath));
         }
 
+        //private async void Shuffle_OnClicked(object sender, EventArgs e)
+       // {
+            //await ;
+       // }
+
+
     }
-}
+
+
+    
+
+    }
+
