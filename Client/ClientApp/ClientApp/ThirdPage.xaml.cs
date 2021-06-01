@@ -38,12 +38,31 @@ namespace ClientApp
             await Navigation.PushAsync(new SecondPage());
         }
 
+        //TODO:
+        //  - Add Proper Exceptionhandling
+        //  - Open next Page at the end of this Method, forward the Result of the "levelOfDrunkenness" via constructor
+        //  - Show Loading animation while waiting for the Response (will take more time if full backend is developed and deployed)
         private async void PostToBackend_OnClicked(object sender, EventArgs e)
         {
-            var content = new MultipartFormDataContent();
+            MultipartFormDataContent content = new MultipartFormDataContent();
+            String url = "https://tipsy-tongues.herokuapp.com/recognition/audio";
 
             byte[] fileByteArray = File.ReadAllBytes(audioFilePath);
             var fileByteArrayContent = new ByteArrayContent(fileByteArray);
+
+            StringContent sentenceContent = new StringContent(sentence);
+
+            content.Add(fileByteArrayContent, "audioFile", audioFilePath);
+            content.Add(sentenceContent, "sentence");
+
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage response = await httpClient.PostAsync(url, content);
+
+            //just to check wether the Response is correct for now
+            // writes content of the HTTPResponse to console
+            Console.WriteLine(response.StatusCode.ToString());
+            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+
             await Navigation.PushAsync(new SecondPage());
         }
     }
