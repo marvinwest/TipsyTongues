@@ -17,7 +17,12 @@
                FontSize="Large"
                VerticalOptions="CenterAndExpand"
                Clicked="SecondPage_OnClicked"/>
-    
+
+            <Button Text="Go"
+               FontSize="Large"
+               VerticalOptions="CenterAndExpand"
+               Clicked="PostToBackend_OnClicked"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

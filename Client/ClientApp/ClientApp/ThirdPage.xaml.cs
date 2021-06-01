@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Net.Http;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +35,15 @@ namespace ClientApp
 
         private async void SecondPage_OnClicked(object sender, EventArgs e)
         {
+            await Navigation.PushAsync(new SecondPage());
+        }
+
+        private async void PostToBackend_OnClicked(object sender, EventArgs e)
+        {
+            var content = new MultipartFormDataContent();
+
+            byte[] fileByteArray = File.ReadAllBytes(audioFilePath);
+            var fileByteArrayContent = new ByteArrayContent(fileByteArray);
             await Navigation.PushAsync(new SecondPage());
         }
     }
