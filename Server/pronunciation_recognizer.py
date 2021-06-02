@@ -21,14 +21,15 @@ def recognize_pronunciation(language_code, sentence, filename):
 	language_config = __build_language_config(language_code)
 	speech_recognizer = __build_speech_recognizer(speech_config, language_config, audio_config)
 	pronunciation_assessment_config = __build_pronunciation_assesment_config(sentence)
- 
 	pronunciation_assessment_config.apply_to(speech_recognizer)
-	response = speech_recognizer.recognize_once()
-	result = __build_pronunciation_result(speechsdk.PronunciationAssessmentResult(response))
 
-	print(sentence)
-	print(response)
-	print(result)
+	response = speech_recognizer.recognize_once()
+
+	try:
+		result = __build_pronunciation_result(speechsdk.PronunciationAssessmentResult(response))
+	except TypeError:
+		# happens if nothing of the file could be recognized
+		result = PronunciationResult(0.0, 0.0, 0.0, 0.0)
 
 	return result
 
@@ -53,10 +54,6 @@ def __build_pronunciation_assesment_config(sentence):
 		grading_system = speechsdk.PronunciationAssessmentGradingSystem.HundredMark,
 		granularity = speechsdk.PronunciationAssessmentGranularity.Phoneme,
 		enable_miscue = True)
-
-def __delete_used_files(pronunciation_file_name):
-	os.remove(pronunciation_file_name)
-
 
 def __build_pronunciation_result(pronunciation_assesment_result):
 	return PronunciationResult(
