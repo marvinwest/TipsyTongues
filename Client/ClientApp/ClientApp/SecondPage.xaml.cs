@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics;
 using Plugin.AudioRecorder;
+using Plugin.Permissions;
 
 namespace ClientApp
 {
@@ -21,8 +22,6 @@ namespace ClientApp
         public SecondPage()
         {
             InitializeComponent();
-
-            
         }
 
         // TODO ask for microphine-permission here, if not given go to errorpage maybe
