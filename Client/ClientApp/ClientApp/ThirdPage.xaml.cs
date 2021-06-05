@@ -21,7 +21,6 @@ namespace ClientApp
         private String audioFilePath;
         private String sentence;
 
-
         public ThirdPage(String audioFilePath, String sentence)
         {
             InitializeComponent();
@@ -71,7 +70,7 @@ namespace ClientApp
             var jsonObject = JObject.Parse(responseBody);
             var levelOfDrunkenness = jsonObject.Value<int>("levelOfDrunkenness");
 
-            await Navigation.PushAsync(new SecondPage());
+            await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
         }
     }
 }
