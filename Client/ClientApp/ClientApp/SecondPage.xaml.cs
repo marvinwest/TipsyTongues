@@ -25,6 +25,8 @@ namespace ClientApp
             
         }
 
+        // TODO ask for microphine-permission here, if not given go to errorpage maybe
+        // microphone-permission: check https://awesomeopensource.com/project/NateRickard/Plugin.AudioRecorder
         void OnButtonPressed (System.Object sender, System.EventArgs e)
         {
             if (AudioRecorderService.IsRecording)

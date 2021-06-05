@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Plugin.AudioRecorder;
+using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 
 namespace ClientApp
@@ -28,6 +29,7 @@ namespace ClientApp
             this.sentence = sentence;
         }
 
+        // Sometimes IO-Exception here
         void PlayRecording(object sender, EventArgs e)
         {
             audioPlayer.Play(audioFilePath);
@@ -39,6 +41,7 @@ namespace ClientApp
         }
 
         //TODO:
+        //  - got to errorpage is statuscode else than 200 (OK)
         //  - Add Proper Exceptionhandling
         //  - Open next Page at the end of this Method, forward the Result of the "levelOfDrunkenness" via constructor
         //  - Show Loading animation while waiting for the Response (will take more time if full backend is developed and deployed)
@@ -60,8 +63,13 @@ namespace ClientApp
 
             //just to check wether the Response is correct for now
             // writes content of the HTTPResponse to console
+            // add guard here, which loads errorpage, if statuscode not OK
             Console.WriteLine(response.StatusCode.ToString());
-            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+            
+            //parse response to json, then forward levelOfDrunkenness to next Page
+            var responseBody = await response.Content.ReadAsStringAsync();
+            var jsonObject = JObject.Parse(responseBody);
+            var levelOfDrunkenness = jsonObject.Value<int>("levelOfDrunkenness");
 
             await Navigation.PushAsync(new SecondPage());
         }
