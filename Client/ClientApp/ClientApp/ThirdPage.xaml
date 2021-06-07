@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientApp.ThirdPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="black">
+            <Grid InputTransparent="True" BackgroundColor="Black"/>
+            
             <Label Text="Listen!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

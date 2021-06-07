@@ -8,8 +8,8 @@
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
 
-    <Entry x:Name = "TipsyText" Text= "LULULU" IsReadOnly= "True" />
-    <Button x:Name="Shuffle" Text="Shuffle"  />
+    <Label x:Name = "TipsyText" Text= "{Binding sentence}"  />
+    <Button x:Name="Shuffle" Text="Shuffle" Clicked="Shuffle_Clicked" />
 
     <Button Text="Start/Stop recording" Pressed="OnButtonPressed"
             Released="OnButtonReleased"

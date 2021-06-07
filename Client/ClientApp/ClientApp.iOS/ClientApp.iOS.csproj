@@ -150,4 +150,7 @@
       <Name>ClientApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Disclaimer.png" />
+  </ItemGroup>
 </Project>

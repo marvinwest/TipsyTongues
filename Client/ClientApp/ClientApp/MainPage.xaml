@@ -3,32 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientApp.MainPage">
 
-    <StackLayout BackgroundColor="black">
+    <StackLayout >
 
     
-      <Image Source="https://www.horizont.net/news/media/11/bitburger.jpg-109284-detailnp.jpeg"
-                VerticalOptions="CenterAndExpand"/>
-     
-      <Label x:Name="Disclaimer"
-               Text="Disclaimer"
-               FontSize="Title"
-               VerticalOptions="StartAndExpand"
-               HorizontalOptions="CenterAndExpand"
-               TextColor="White"/>
-
-      <Button Text="press to start"
-               FontSize="Large"
-               VerticalOptions="CenterAndExpand"
-               Font=""
-               BackgroundColor="Black"
-               HorizontalOptions="Center"
-               TextColor="Orange"
-               BorderColor="Orange"
-               BorderWidth="2"
-               CornerRadius="100"
-               WidthRequest="500"
-               HeightRequest="80"
-               Clicked="NavigateButton_OnClicked"/>
+     <ImageButton Source="Disclaimer.png"
+                Clicked= "NavigateButton_OnClicked"/>
+          
+             
 
 
     </StackLayout>
