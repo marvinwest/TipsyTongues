@@ -18,9 +18,21 @@ namespace ClientApp
         //TODO: add outputtext to represent sentence in SecondPage.xaml,
         //  Let textfield be generated via Method on loading of page and on new Sentence Button.
         //  method should take one sentence randomly out of an array of sentences.
+        private String[] sentences = { "te", "qui", "la" };
         private String sentence;
+        public String Sentence
+        {
+            get { return sentence; }
+            set
+            {
+                sentence = value;
+                OnPropertyChanged("Sentence");
+            }
+        }
         public SecondPage()
         {
+            RandomizeSentence();
+            BindingContext = this;
             InitializeComponent();
         }
 
@@ -47,10 +59,17 @@ namespace ClientApp
             await Navigation.PushAsync(new ThirdPage(audioFilePath, sentence));
         }
 
-        //private async void Shuffle_OnClicked(object sender, EventArgs e)
-       // {
-            //await ;
-       // }
+        private void RandomizeSentence()
+        {
+            Random rand = new Random();
+            int index = rand.Next(sentences.Length);
+            Sentence = sentences[index];
+        }
+
+        void Shuffle_OnClicked(object sender, EventArgs e)
+        {
+            RandomizeSentence();
+        }
 
 
     }
