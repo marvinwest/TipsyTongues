@@ -14,9 +14,14 @@ namespace ClientApp
     {
         private readonly AudioRecorderService AudioRecorderService = new AudioRecorderService();
 
-       
-        private String sentence;
+
+        //mocked for now
+        //TODO: add outputtext to represent sentence in SecondPage.xaml,
+        //  Let textfield be generated via Method on loading of page and on new Sentence Button.
+        //  method should take one sentence randomly out of an array of sentences.
         private String[] sentences = { "te", "qui", "la" };
+        private String sentence;
+
         public String Sentence
         {
             get { return sentence; }
@@ -28,16 +33,14 @@ namespace ClientApp
         }
         public SecondPage()
         {
+
              RandomizeSentence();
              BindingContext = this;
              InitializeComponent();
+
         }
 
-        //mocked for now
-        //TODO: add outputtext to represent sentence in SecondPage.xaml,
-        //  Let textfield be generated via Method on loading of page and on new Sentence Button.
-        //  method should take one sentence randomly out of an array of sentences.
-
+       
 
         async void OnButtonPressed (System.Object sender, System.EventArgs e)
         {
@@ -64,23 +67,19 @@ namespace ClientApp
 
 
         private void RandomizeSentence()
-
         {
-            
             Random rand = new Random();
             int index = rand.Next(sentences.Length);
-
-           
             Sentence = sentences[index];
-
-            
-
         }
 
-        void Shuffle_Clicked(System.Object sender, System.EventArgs e)
+        void Shuffle_OnClicked(object sender, EventArgs e)
         {
             RandomizeSentence();
         }
+
+
+      
         
 
     
