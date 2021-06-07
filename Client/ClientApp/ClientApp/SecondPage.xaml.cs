@@ -24,17 +24,15 @@ namespace ClientApp
             InitializeComponent();
         }
 
-        // TODO ask for microphine-permission here, if not given go to errorpage maybe
-        // microphone-permission: check https://awesomeopensource.com/project/NateRickard/Plugin.AudioRecorder
-        void OnButtonPressed (System.Object sender, System.EventArgs e)
+        async void OnButtonPressed (System.Object sender, System.EventArgs e)
         {
             if (AudioRecorderService.IsRecording)
             {
-                AudioRecorderService.StopRecording();
+                await AudioRecorderService.StopRecording();
             }
             else
             {
-                AudioRecorderService.StartRecording();
+                await AudioRecorderService.StartRecording();
             }
         }
 

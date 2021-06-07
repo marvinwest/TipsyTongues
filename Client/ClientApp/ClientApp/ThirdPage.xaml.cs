@@ -29,9 +29,17 @@ namespace ClientApp
         }
 
         // Sometimes IO-Exception here
-        void PlayRecording(object sender, EventArgs e)
+        async void PlayRecording(object sender, EventArgs e)
         {
-            audioPlayer.Play(audioFilePath);
+            try
+            {
+                audioPlayer.Play(audioFilePath);
+            }
+            catch (Exception)
+            {
+                await Navigation.PushAsync(new ErrorPage("Error loading audiofile"));
+            }
+            
         }
 
         private async void SecondPage_OnClicked(object sender, EventArgs e)
@@ -49,12 +57,19 @@ namespace ClientApp
             MultipartFormDataContent content = new MultipartFormDataContent();
             String url = "https://tipsy-tongues.herokuapp.com/recognition/audio";
 
-            byte[] fileByteArray = File.ReadAllBytes(audioFilePath);
-            var fileByteArrayContent = new ByteArrayContent(fileByteArray);
+            try
+            {
+                byte[] fileByteArray = File.ReadAllBytes(audioFilePath);
+                var fileByteArrayContent = new ByteArrayContent(fileByteArray);
+                content.Add(fileByteArrayContent, "audioFile", audioFilePath);
+            }
+            catch (Exception)
+            {
+                await Navigation.PushAsync(new ErrorPage("Error loading audiofile"));
+            }
+
 
             StringContent sentenceContent = new StringContent(sentence);
-
-            content.Add(fileByteArrayContent, "audioFile", audioFilePath);
             content.Add(sentenceContent, "sentence");
 
             HttpClient httpClient = new HttpClient();
