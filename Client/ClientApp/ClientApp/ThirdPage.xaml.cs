@@ -16,19 +16,19 @@ namespace ClientApp
     public partial class ThirdPage : ContentPage
     {
 
-        private readonly AudioPlayer audioPlayer = new AudioPlayer();
+        private readonly AudioPlayer audioPlayer;
 
         private String audioFilePath;
         private String sentence;
 
         public ThirdPage(String audioFilePath, String sentence)
         {
-            InitializeComponent();
+            audioPlayer = new AudioPlayer();
             this.audioFilePath = audioFilePath;
             this.sentence = sentence;
+            InitializeComponent();
         }
 
-        // Sometimes IO-Exception here
         async void PlayRecording(object sender, EventArgs e)
         {
             try
@@ -87,5 +87,7 @@ namespace ClientApp
 
             await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
         }
+
     }
+
 }
