@@ -39,14 +39,15 @@ namespace ClientApp
             catch (Exception)
             {
                 await Navigation.PushAsync(new ErrorPage("Error loading audiofile"));
+                Navigation.RemovePage(this);
             }
             
         }
 
+        //TODO: use Navigation.RemovePage on every change of pages!!!
         private async void SecondPage_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SecondPage());
-            //removes current Page from Stack?!?!
             Navigation.RemovePage(this);
         }
 
@@ -90,8 +91,8 @@ namespace ClientApp
             var levelOfDrunkenness = jsonObject.Value<int>("levelOfDrunkenness");
 
             await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
-            Navigation.RemovePage(loadingPage);
             Navigation.RemovePage(this);
+            Navigation.RemovePage(loadingPage);
         }
 
     }

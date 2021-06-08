@@ -49,6 +49,7 @@ namespace ClientApp
             String audioFilePath = AudioRecorderService.GetAudioFilePath();
 
             await Navigation.PushAsync(new ThirdPage(audioFilePath, sentence));
+            Navigation.RemovePage(this);
         }
 
 

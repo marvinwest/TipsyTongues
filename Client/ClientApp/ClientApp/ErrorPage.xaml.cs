@@ -29,6 +29,7 @@ namespace ClientApp
         private async void MainPage_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());
+            Navigation.RemovePage(this);
         }
     }
 }
