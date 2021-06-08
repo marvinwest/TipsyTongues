@@ -16,7 +16,6 @@ namespace ClientApp
 
         private String[] sentences = { "te", "qui", "la" };
         private String sentence;
-
         public String Sentence
         {
             get { return sentence; }
@@ -26,6 +25,7 @@ namespace ClientApp
                 OnPropertyChanged("Sentence");
             }
         }
+
         public SecondPage()
         {
             AudioRecorderService = new AudioRecorderService();

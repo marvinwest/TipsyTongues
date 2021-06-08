@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="black">
             <Grid InputTransparent="True" BackgroundColor="Black"/>
-            
+
             <Label Text="Listen!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
@@ -14,7 +14,7 @@
                FontSize="Large"
                VerticalOptions="CenterAndExpand"
                Clicked="PlayRecording"/>
-            
+
             <Button Text="try again"
                FontSize="Large"
                VerticalOptions="CenterAndExpand"
@@ -26,5 +26,6 @@
                Clicked="PostToBackend_OnClicked"/>
 
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

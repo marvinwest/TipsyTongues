@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using Plugin.AudioRecorder;
 using Newtonsoft.Json.Linq;
+using Lottie.Forms;
 using Xamarin.Forms;
 
 namespace ClientApp
@@ -45,6 +46,8 @@ namespace ClientApp
         private async void SecondPage_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SecondPage());
+            //removes current Page from Stack?!?!
+            Navigation.RemovePage(this);
         }
 
         //TODO:
@@ -52,22 +55,23 @@ namespace ClientApp
         //  - Add Proper Exceptionhandling
         //  - Open next Page at the end of this Method, forward the Result of the "levelOfDrunkenness" via constructor
         //  - Show Loading animation while waiting for the Response (will take more time if full backend is developed and deployed)
+
+        //Lottie:
+        //Placeholder-File = Mercury_navigation_refresh.json TODO: replace by actual animation, wait for design
+        //  - Android: Add to Assets-folder, set Build action to AndroidAsset in Properties
+        //  - Apple: Add to to root clientapp.ios-folder, set Build action to BundleResource
         private async void PostToBackend_OnClicked(object sender, EventArgs e)
         {
+            ContentPage loadingPage = new LoadingPage();
+            await Navigation.PushAsync(loadingPage);
+
             MultipartFormDataContent content = new MultipartFormDataContent();
             String url = "https://tipsy-tongues.herokuapp.com/recognition/audio";
 
-            try
-            {
-                byte[] fileByteArray = File.ReadAllBytes(audioFilePath);
-                var fileByteArrayContent = new ByteArrayContent(fileByteArray);
-                content.Add(fileByteArrayContent, "audioFile", audioFilePath);
-            }
-            catch (Exception)
-            {
-                await Navigation.PushAsync(new ErrorPage("Error loading audiofile"));
-            }
 
+            byte[] fileByteArray = File.ReadAllBytes(audioFilePath);
+            var fileByteArrayContent = new ByteArrayContent(fileByteArray);
+            content.Add(fileByteArrayContent, "audioFile", audioFilePath);
 
             StringContent sentenceContent = new StringContent(sentence);
             content.Add(sentenceContent, "sentence");
@@ -86,6 +90,8 @@ namespace ClientApp
             var levelOfDrunkenness = jsonObject.Value<int>("levelOfDrunkenness");
 
             await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
+            Navigation.RemovePage(loadingPage);
+            Navigation.RemovePage(this);
         }
 
     }
