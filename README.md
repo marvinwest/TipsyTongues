@@ -21,7 +21,6 @@ Front End:
 Back End:
 - Uses Python Flask for serverside developing
 - Uses Speech-Recognition-API to get Text from audiofile
-- Compares recognized Text with given Sentences (that had to be read by the user)
 - Return Level of drunkenness based on the comparison
 
 
