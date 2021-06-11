@@ -2,29 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientApp.ThirdPage">
+
     <ContentPage.Content>
-        <StackLayout BackgroundColor="black">
-            <Grid InputTransparent="True" BackgroundColor="Black"/>
-            
-            <Label Text="Listen!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
 
-            <Button Text="press to listen"
-               FontSize="Large"
-               VerticalOptions="CenterAndExpand"
-               Clicked="PlayRecording"/>
-            
-            <Button Text="try again"
-               FontSize="Large"
-               VerticalOptions="CenterAndExpand"
-               Clicked="SecondPage_OnClicked"/>
+    <Grid BackgroundColor="black">
 
-            <Button Text="Go"
-               FontSize="Large"
-               VerticalOptions="CenterAndExpand"
-               Clicked="PostToBackend_OnClicked"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        </StackLayout>
+        
+            <StackLayout Grid.Row="1" Orientation="Vertical">
+                <Image Source="ListentoRecording.png"/>
+
+                <ImageButton Source="RecordButton.png" Clicked="PlayRecording"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Orientation="Horizontal">
+                <Button Text="Try Again"
+                 HorizontalOptions="Start"
+                 Clicked="SecondPage_OnClicked"/>
+
+                 <Button Text="Go"
+                  HorizontalOptions="End"
+                  Clicked="PostToBackend_OnClicked"/>
+             </StackLayout>
+
+        
+    </Grid>
     </ContentPage.Content>
 </ContentPage>

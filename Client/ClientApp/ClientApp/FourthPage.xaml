@@ -3,14 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientApp.FourthPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="Black">
+            <StackLayout>
+                <Image Source="YourResult.png" VerticalOptions="Start" />
+            </StackLayout>
+
+            <StackLayout>
+       
+            <Image Source="BeerHalfFull.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+
             <Label Text="{Binding LevelOfDrunkennessDisplay}"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="try again"
-               FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                   TextColor="White"/>
+
+             </StackLayout>
+
+            <Image Source="somebodysgettingtipsy.png" />
+
+            <ImageButton 
+               Source="HomeButton.png"
                VerticalOptions="CenterAndExpand"
                Clicked="SecondPage_OnClicked"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

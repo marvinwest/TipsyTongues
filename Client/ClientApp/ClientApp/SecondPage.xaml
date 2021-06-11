@@ -6,18 +6,47 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="ClientApp.SecondPage">
     <ContentPage.Content>
-        <StackLayout Margin="20,35,20,20">
 
-    <Label x:Name = "TipsyText" Text= "{Binding Sentence}" />
-            <Button x:Name="Shuffle" Text="Shuffle" Pressed="Shuffle_OnClicked" />
+   
+   <StackLayout BackgroundColor="Black">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="1" Orientation="Vertical">
+            <Frame HeightRequest="338" WidthRequest="312" Margin="24,28,24,0" CornerRadius="8" BackgroundColor="#262424">
+                <Frame VerticalOptions="Center" BackgroundColor="#262424"  HeightRequest="297" WidthRequest="266" CornerRadius="8" >
+               
+                     <Label x:Name = "TipsyText" Text= "{Binding Sentence}" TextColor="White" FontAttributes="Bold" FontFamily="Fjalla One" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="Large"/>
+          
+                </Frame>
+             </Frame>
+
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+                <ImageButton x:Name="Shuffle" Source="ChangeButton.png" Pressed="Shuffle_OnClicked" HorizontalOptions="End" Margin="0,0,24,0"/>
+             </StackLayout>
+        </StackLayout>
+    </Grid>
+
+    <StackLayout >
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+
+        <Image Grid.Row="1" Source="HoldtheButton.png" VerticalOptions="End"/>
+
+        <ImageButton Grid.Row="2" Source="RecordButton.png" Pressed="OnButtonPressed"
+            Released="OnButtonReleased" VerticalOptions="End" />
+        </Grid>
+     </StackLayout>
 
 
-    <Button Text="Start/Stop recording" Pressed="OnButtonPressed"
-            Released="OnButtonReleased"
-            VerticalOptions="End"
-            />
-
-
-    </StackLayout>
+   </StackLayout>
     </ContentPage.Content>
 </ContentPage>

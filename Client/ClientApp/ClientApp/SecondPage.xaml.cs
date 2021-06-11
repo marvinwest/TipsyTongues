@@ -14,7 +14,7 @@ namespace ClientApp
     {
         private readonly AudioRecorderService AudioRecorderService;
 
-        private String[] sentences = { "te", "qui", "la" };
+        private String[] sentences = { "Wrap rage, also called package rage, is the common name for heightened levels of anger and frustration resulting from the inability to open packaging, particularly some heat-sealed plastic blister packs and clamshells.", "zzzzzzzzzzzzzz", "lölölölöölölöölöl" };
         private String sentence;
 
         public String Sentence

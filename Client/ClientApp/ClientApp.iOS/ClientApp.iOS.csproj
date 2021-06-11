@@ -152,5 +152,16 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Disclaimer.png" />
+    <BundleResource Include="Resources\ChangeButton.png" />
+    <BundleResource Include="Resources\RecordButton.png" />
+    <BundleResource Include="Resources\HoldtheButton.png" />
+    <BundleResource Include="Resources\YourResult.png" />
+    <BundleResource Include="Resources\BeerHalfFull.png" />
+    <BundleResource Include="Resources\HomeButton.png" />
+    <BundleResource Include="Resources\Rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\GoButton.png" />
+    <AndroidResource Include="Resources\TryAgainButton.png" />
   </ItemGroup>
 </Project>
