@@ -16,7 +16,6 @@ namespace ClientApp
 
         private String[] sentences = { "Wrap rage, also called package rage, is the common name for heightened levels of anger and frustration resulting from the inability to open packaging, particularly some heat-sealed plastic blister packs and clamshells.", "zzzzzzzzzzzzzz", "lölölölöölölöölöl" };
         private String sentence;
-
         public String Sentence
         {
             get { return sentence; }
@@ -26,6 +25,7 @@ namespace ClientApp
                 OnPropertyChanged("Sentence");
             }
         }
+
         public SecondPage()
         {
             AudioRecorderService = new AudioRecorderService();
@@ -49,6 +49,7 @@ namespace ClientApp
             String audioFilePath = AudioRecorderService.GetAudioFilePath();
 
             await Navigation.PushAsync(new ThirdPage(audioFilePath, sentence));
+            Navigation.RemovePage(this);
         }
 
 

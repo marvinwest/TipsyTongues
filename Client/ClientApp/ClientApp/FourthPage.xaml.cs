@@ -30,6 +30,7 @@ namespace ClientApp
         private async void SecondPage_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SecondPage());
+            Navigation.RemovePage(this);
         }
     }
 

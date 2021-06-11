@@ -21,10 +21,12 @@ namespace ClientApp
             if (await PermissionService.checkOrGetPermissions())
             {
                 await Navigation.PushAsync(new SecondPage());
+                Navigation.RemovePage(this);
             }
             else
             {
                 await Navigation.PushAsync(new ErrorPage("This app needs Permission to Microphone and Storage, otherwise it can´t be used"));
+                Navigation.RemovePage(this);
             }
         }
 
