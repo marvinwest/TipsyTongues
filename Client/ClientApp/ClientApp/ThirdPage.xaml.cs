@@ -69,10 +69,21 @@ namespace ClientApp
             MultipartFormDataContent content = new MultipartFormDataContent();
             String url = "https://tipsy-tongues.herokuapp.com/recognition/audio";
 
+            // If microphone didn´t record a sound, the fileByteArray can´t be build
+            // Therefore the user is forwarded to the errorpage
+            try
+            {
+                byte[] fileByteArray = File.ReadAllBytes(audioFilePath);
+                var fileByteArrayContent = new ByteArrayContent(fileByteArray);
+                content.Add(fileByteArrayContent, "audioFile", audioFilePath);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine(ex.Source);
+                await Navigation.PushAsync(new ErrorPage("You did not record a message, therefore your level of Drunkenness can not be recognized. Try again."));
+                Navigation.RemovePage(this);
+            }
 
-            byte[] fileByteArray = File.ReadAllBytes(audioFilePath);
-            var fileByteArrayContent = new ByteArrayContent(fileByteArray);
-            content.Add(fileByteArrayContent, "audioFile", audioFilePath);
 
             StringContent sentenceContent = new StringContent(sentence);
             content.Add(sentenceContent, "sentence");
