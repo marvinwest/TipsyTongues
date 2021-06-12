@@ -63,33 +63,53 @@ namespace ClientApp
         //  - Apple: Add to to root clientapp.ios-folder, set Build action to BundleResource
         private async void PostToBackend_OnClicked(object sender, EventArgs e)
         {
+            // Loads loadingPage at beginning of the Method
             ContentPage loadingPage = new LoadingPage();
             await Navigation.PushAsync(loadingPage);
 
+            // defines the content of the payload that is forwarded to Backend
             MultipartFormDataContent content = new MultipartFormDataContent();
             String url = "https://tipsy-tongues.herokuapp.com/recognition/audio";
 
+            try
+            {
+                // Reads Data from the audioFile into a bytearray
+                // Adds the ByteArrayContent to the payload
+                byte[] fileByteArray = File.ReadAllBytes(audioFilePath);
+                var fileByteArrayContent = new ByteArrayContent(fileByteArray);
+                content.Add(fileByteArrayContent, "audioFile", audioFilePath);
+            }
+            catch (ArgumentNullException ex)
+            {
+                // If microphone didn´t record a sound, the fileByteArray can´t be build
+                // Therefore the user is forwarded to the errorpage
+                Console.WriteLine(ex.Source);
+                await Navigation.PushAsync(new ErrorPage("You did not record a message, therefore your level of Drunkenness can not be recognized. Try again."));
+                Navigation.RemovePage(this);
+            }
 
-            byte[] fileByteArray = File.ReadAllBytes(audioFilePath);
-            var fileByteArrayContent = new ByteArrayContent(fileByteArray);
-            content.Add(fileByteArrayContent, "audioFile", audioFilePath);
-
+            // Builds StringContent from given sentence
+            // Adds it to the Payload
             StringContent sentenceContent = new StringContent(sentence);
             content.Add(sentenceContent, "sentence");
 
+            // Builds HTTPClient
+            // Forwards the PostRequest with content-payload to backend
             HttpClient httpClient = new HttpClient();
             HttpResponseMessage response = await httpClient.PostAsync(url, content);
 
-            //just to check wether the Response is correct for now
             // writes content of the HTTPResponse to console
-            // add guard here, which loads errorpage, if statuscode not OK
+            // TODO: add guard here, which loads errorpage, if statuscode not OK
             Console.WriteLine(response.StatusCode.ToString());
             
-            //parse response to json, then forward levelOfDrunkenness to next Page
+            // Parse response to json-format
+            // Extract and forward levelOfDrunkenness to the next Page
             var responseBody = await response.Content.ReadAsStringAsync();
             var jsonObject = JObject.Parse(responseBody);
             var levelOfDrunkenness = jsonObject.Value<int>("levelOfDrunkenness");
 
+            // Forwards the returned levelOfDrunkenness to the Next Page
+            // Closes this Page and the loadingpage
             await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
             Navigation.RemovePage(this);
             Navigation.RemovePage(loadingPage);
