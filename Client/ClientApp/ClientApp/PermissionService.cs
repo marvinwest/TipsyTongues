@@ -11,6 +11,7 @@ namespace ClientApp
     {
         public static async Task<bool> checkOrGetPermissions()
         {
+            // defines the Permissions the app needs
             bool permissionsGranted = true;
             var permissionsList = new List<Permission>()
             {
@@ -18,6 +19,8 @@ namespace ClientApp
                 Permission.Storage
             };
 
+            // checks which permissions are already given
+            // Adds not given, but needed permissions to permissionsNeededList
             var permissionsNeededList = new List<Permission>();
             foreach (var permission in permissionsList)
             {
@@ -28,6 +31,9 @@ namespace ClientApp
                 }
             }
 
+            // Asks for Permission in PermissionsNeededList
+            // If all Permissions are given -> return true
+            // If not return false
             var results = await CrossPermissions.Current.RequestPermissionsAsync(permissionsNeededList.ToArray());
             foreach (var permission in permissionsNeededList)
             {
