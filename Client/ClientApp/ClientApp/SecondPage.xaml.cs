@@ -46,6 +46,7 @@ namespace ClientApp
         private async void OnButtonReleased (object sender, EventArgs e)
         {
             await AudioRecorderService.StopRecording();
+            
             String audioFilePath = AudioRecorderService.GetAudioFilePath();
 
             await Navigation.PushAsync(new ThirdPage(audioFilePath, sentence));

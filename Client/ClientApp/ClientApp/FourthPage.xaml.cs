@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace ClientApp
 {
-    //TODO Logic is there build a "good" resultPage!
+    
     public partial class FourthPage : ContentPage
     {
         private int levelOfDrunkennessDisplay;
