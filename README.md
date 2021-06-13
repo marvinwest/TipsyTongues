@@ -18,18 +18,18 @@ Front End:
 - .Forms as the open source UI framework in XAML with CodeBehind in C#
 
 Code Replication Steps: 
-  -download the installer for Visual Studio IDE Community Version (https://visualstudio.microsoft.com/de/downloads/)
-    -Setup for Windows:
-      -double-click bootstrapper in your downloads: vs_community.exe, if you receive a User Account Control notice, choose Yes
-      -acknowledge the Microsoft License Terms and the Microsoft Privacy Statement
-      -Workloads: select Xamarin Mobile development with .NET (If VS is already installed, add Xamarin by re-running the Visual Studio installer to modify workloads
-    -Setup for Mac: 
-      -click the VisualStudioforMacInstaller.dmg to mount the installer, then run it by double-clicking the arrow logo
-      -acknowledge the privacy and license terms
-      -Workloads: select .NET Core, Android and IOS 
-      -install
-      -sign in with Microsoft, choose your preferences
-  -download ClientApp from the Repository and run our code 
+  - download the installer for Visual Studio IDE Community Version (https://visualstudio.microsoft.com/de/downloads/)
+    - Setup for Windows:
+      - double-click bootstrapper in your downloads: vs_community.exe, if you receive a User Account Control notice, choose Yes
+      - acknowledge the Microsoft License Terms and the Microsoft Privacy Statement
+      - Workloads: select Xamarin Mobile development with .NET (If VS is already installed, add Xamarin by re-running the Visual Studio installer to modify workload
+    - Setup for Mac: 
+      - click the VisualStudioforMacInstaller.dmg to mount the installer, then run it by double-clicking the arrow logo
+      - acknowledge the privacy and license terms
+      - Workloads: select .NET Core, Android and IOS 
+      - install
+      - sign in with Microsoft, choose your preferences
+  - download ClientApp from the Repository and run our code 
 
 
 
