@@ -9,7 +9,7 @@ from pronunciation_result import PronunciationResult
 # speech-key: your subscription key from Azure
 # service_region: The region you declared in your Azure-profile
 
-speech_key, service_region = "add key here", "add service region here"
+speech_key, service_region = "45148f809608499991a8c771d589604d", "westeurope"
 
 # only functions for short audiofiles.
 # maybe use continuous recognition instead.
@@ -24,6 +24,7 @@ def recognize_pronunciation(language_code, sentence, filename):
 	pronunciation_assessment_config.apply_to(speech_recognizer)
 
 	response = speech_recognizer.recognize_once()
+	print(response)
 
 	try:
 		result = __build_pronunciation_result(speechsdk.PronunciationAssessmentResult(response))

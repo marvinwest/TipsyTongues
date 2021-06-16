@@ -17,8 +17,9 @@ CORS(app)
 def post_recognition():
 	# language code to determine in which language the pronunciation regocnition should be
 	# mocked for now
-	language_code = "de-DE"
+	language_code = "en-US"
 	sentence = request.form["sentence"]
+	print(sentence)
 	audio_file = request.files.get("audioFile")
 	filename = "pronunciation_file.wav"
 	converter.convert_to_wave_and_save(filename, audio_file)
