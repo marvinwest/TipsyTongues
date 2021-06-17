@@ -46,9 +46,13 @@ components:
       description: Sentence the user had to read and audioFile.
       type: object
       required:
+        - languageCode
         - sentence
         - audioFile
       properties:
+        languageCode:
+          type: string
+          description: The language code for the language to do the recognition in
         sentence:
           type: string
           description: Sentence the user has to read

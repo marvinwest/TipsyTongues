@@ -2,8 +2,9 @@ from flask import Flask, request
 from flask_cors import CORS
 import os
 
-import pronunciation_recognizer as recognizer
 import wave_file_converter as converter
+import pronunciation_recognizer as recognizer
+
 
 app = Flask(__name__)
 # CORS allows other programming languages to send a request

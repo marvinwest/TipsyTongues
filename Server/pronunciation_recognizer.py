@@ -9,7 +9,7 @@ from pronunciation_result import PronunciationResult
 # speech-key: your subscription key from Azure
 # service_region: The region you declared in your Azure-profile
 
-speech_key, service_region = "45148f809608499991a8c771d589604d", "westeurope"
+speech_key, service_region = "add speech key here", "add service region here"
 
 # only functions for short audiofiles.
 # maybe use continuous recognition instead.
