@@ -5,6 +5,7 @@ import os
 
 import wave_file_converter as converter
 import pronunciation_recognizer as recognizer
+import drunkenness_calculator as calculator
 
 
 app = Flask(__name__)
@@ -30,12 +31,13 @@ def post_recognition():
 	converter.convert_to_wave_and_save(filename, audio_file)
 
 	recognition_result = recognizer.recognize_pronunciation(language_code, sentence, filename)
+	level_of_drunkenness = calculator.calculate_drunkenness(recognition_result)
 
 	# delete temporary file after recognition
 	os.remove(filename)
 
 	print(__build_response(recognition_result))
-	return {"levelOfDrunkenness" : 3}
+	return {"levelOfDrunkenness" : level_of_drunkenness}
 
 def __build_response(recognition_result):
 	return {
