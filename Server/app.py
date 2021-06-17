@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask_cors import CORS
+from flask_api import status
 import os
 
 import wave_file_converter as converter
@@ -18,11 +19,14 @@ CORS(app)
 def post_recognition():
 	# language code to determine in which language the pronunciation regocnition should be
 	# mocked for now
-	language_code = "en-US"
-	sentence = request.form["sentence"]
-	print(sentence)
-	audio_file = request.files.get("audioFile")
+	try:
+		language_code = request.form["languageCode"]
+		sentence = request.form["sentence"]
+		audio_file = request.files.get("audioFile")
+	except KeyError:
+		return "Invalid Request", status.HTTP_400_BAD_REQUEST
 	filename = "pronunciation_file.wav"
+	print(sentence)
 	converter.convert_to_wave_and_save(filename, audio_file)
 
 	recognition_result = recognizer.recognize_pronunciation(language_code, sentence, filename)

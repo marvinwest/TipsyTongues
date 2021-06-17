@@ -54,8 +54,7 @@ namespace ClientApp
         //TODO:
         //  - got to errorpage is statuscode else than 200 (OK)
         //  - Add Proper Exceptionhandling
-        //  - Open next Page at the end of this Method, forward the Result of the "levelOfDrunkenness" via constructor
-        //  - Show Loading animation while waiting for the Response (will take more time if full backend is developed and deployed)
+        //  - Add languageCode to http-post (see api.yaml)
 
         //Lottie:
         //Placeholder-File = Mercury_navigation_refresh.json TODO: replace by actual animation, wait for design
