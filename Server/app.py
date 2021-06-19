@@ -22,13 +22,13 @@ def post_recognition():
 	# language code to determine in which language the pronunciation regocnition should be
 	# mocked for now
 	try:
-		authentication = request.headers["authentication"]
+		authorization = request.headers["authorization"]
 		language_code = request.form["languageCode"]
 		sentence = request.form["sentence"]
 		audio_file = request.files.get("audioFile")
 	except KeyError:
 		return "Invalid Request", status.HTTP_400_BAD_REQUEST
-	if(authentication != keys.authentication_key):
+	if(authorization != keys.authorization_key):
 		return "Invalid Request", status.HTTP_400_BAD_REQUEST
 
 	filename = "pronunciation_file.wav"
