@@ -1,7 +1,7 @@
 import azure.cognitiveservices.speech as speechsdk
 
 from pronunciation_result import PronunciationResult
-import server_keys as config
+import server_keys as keys
 
 
 # !!! DO NOT PUSH TO GITHUB WITH VALID speech_key !!!
@@ -10,7 +10,7 @@ import server_keys as config
 # speech-key: your subscription key from Azure
 # service_region: The region you declared in your Azure-profile
 
-speech_key, service_region = config.azure_service_key, config.azure_service_region
+speech_key, service_region = keys.azure_service_key, keys.azure_service_region
 
 # only functions for short audiofiles.
 # maybe use continuous recognition instead.
