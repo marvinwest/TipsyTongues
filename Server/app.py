@@ -6,6 +6,7 @@ import os
 import wave_file_converter as converter
 import pronunciation_recognizer as recognizer
 import drunkenness_calculator as calculator
+import server_keys as keys
 
 
 app = Flask(__name__)
@@ -21,13 +22,16 @@ def post_recognition():
 	# language code to determine in which language the pronunciation regocnition should be
 	# mocked for now
 	try:
+		authentication = request.headers["authentication"]
 		language_code = request.form["languageCode"]
 		sentence = request.form["sentence"]
 		audio_file = request.files.get("audioFile")
 	except KeyError:
 		return "Invalid Request", status.HTTP_400_BAD_REQUEST
+	if(authentication != keys.authentication_key):
+		return "Invalid Request", status.HTTP_400_BAD_REQUEST
+
 	filename = "pronunciation_file.wav"
-	print(sentence)
 	converter.convert_to_wave_and_save(filename, audio_file)
 
 	recognition_result = recognizer.recognize_pronunciation(language_code, sentence, filename)
