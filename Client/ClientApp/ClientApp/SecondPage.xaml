@@ -25,8 +25,8 @@
                 </Frame>
              </Frame>
 
-            <StackLayout Grid.Row="2" Orientation="Vertical">
-                <ImageButton x:Name="Shuffle" Source="ChangeButton.png" Pressed="Shuffle_OnClicked" HorizontalOptions="End" Margin="0,0,24,0"/>
+            <StackLayout Grid.Row="2" Orientation="Vertical" HeightRequest="50">
+                <ImageButton x:Name="Shuffle" Source="shuffle_button.png" Pressed="Shuffle_OnClicked"  HorizontalOptions="End" Margin="0,0,24,0"/>
              </StackLayout>
         </StackLayout>
     </Grid>
@@ -39,10 +39,10 @@
 
             </Grid.RowDefinitions>
 
-        <Image Grid.Row="1" Source="HoldtheButton.png" VerticalOptions="End"/>
+        <Image Grid.Row="1" Source="holdthebutton.png" HeightRequest="50" VerticalOptions="End"/>
 
-        <ImageButton Grid.Row="2" Source="RecordButton.png" Pressed="OnButtonPressed"
-            Released="OnButtonReleased" VerticalOptions="End" />
+        <ImageButton Grid.Row="2" Source="record_button.png" Pressed="OnButtonPressed"
+            Released="OnButtonReleased" HeightRequest="138" BackgroundColor="black" VerticalOptions="EndAndExpand" />
         </Grid>
      </StackLayout>
 

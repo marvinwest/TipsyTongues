@@ -4,29 +4,45 @@
              x:Class="ClientApp.FourthPage">
     <ContentPage.Content>
         <StackLayout BackgroundColor="Black">
+            <Grid>
+                <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
             <StackLayout>
-                <Image Source="YourResult.png" VerticalOptions="Start" />
+                <Image Source="yourresults.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
 
-            <StackLayout>
-       
-            <Image Source="BeerHalfFull.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <StackLayout Grid.Row="2">
+                <Image Source="frame.png" HeightRequest="394"/>
+            </StackLayout>
+            
+            <StackLayout Grid.Row="2">
+            
+            <Image Source="beer4.png" HeightRequest="245" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
 
             <Label Text="{Binding LevelOfDrunkennessDisplay}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
                    TextColor="White"/>
-
+            <Image Source="beer4_text.png" HeightRequest="66" />
              </StackLayout>
+              
+            
+            
 
-            <Image Source="somebodysgettingtipsy.png" />
-
-            <ImageButton 
+            <ImageButton Grid.Row="4"
                Source="HomeButton.png"
-               VerticalOptions="CenterAndExpand"
+            Margin="0,0,0,26"
+               HeightRequest="104"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="EndAndExpand"
                Clicked="SecondPage_OnClicked"/>
 
-
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

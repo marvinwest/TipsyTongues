@@ -122,12 +122,81 @@
     <ImageAsset Include="Resources\Assets.xcassets\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\Image-1.imageset\—Pngtree—hand drawn cute beer_4211953.png">
+    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\Image-1.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\ShuffleButton%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\ShuffleButton%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\ShuffleButton%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\holdthebutton.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\holdthebutton.png.imageset\holdthebutton%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\holdthebutton.png.imageset\holdthebutton%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\holdthebutton.png.imageset\holdthebutton%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\record_button.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\record_button.png.imageset\record_button%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\go_button.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\go_button.png.imageset\go_button%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\go_button.png.imageset\go_button%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\go_button.png.imageset\go_button%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\relisten.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\relisten.png.imageset\relisten%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\relisten.png.imageset\relisten%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\relisten.png.imageset\relisten%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\tryagain_button.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\tryagain_button.png.imageset\tryagain_button%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\tryagain_button.png.imageset\tryagain_button%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\tryagain_button.png.imageset\tryagain_button%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\yourresults.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\yourresults.png.imageset\yourresults%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\yourresults.png.imageset\yourresults%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\yourresults.png.imageset\yourresults%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer4.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer4.png.imageset\beer4%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer4.png.imageset\beer4%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer4.png.imageset\beer4%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer3.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer2.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer1.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer0.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer3.png.imageset\beer3%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer3.png.imageset\beer3%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer3.png.imageset\beer3%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer2.png.imageset\beer2%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer2.png.imageset\beer2%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer2.png.imageset\beer2%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer1.png.imageset\beer1%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer1.png.imageset\beer1%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer1.png.imageset\beer1%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer0.png.imageset\beer0%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer0.png.imageset\beer0%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer0.png.imageset\beer0%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer4_text.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer3_text.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer2_text.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer1_text.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer0_text.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer0_text.png.imageset\beer0_text%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer0_text.png.imageset\beer0_text%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer0_text.png.imageset\beer0_text%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer1_text.png.imageset\beer1_text%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer1_text.png.imageset\beer1_text%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer1_text.png.imageset\beer1_text%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer2_text.png.imageset\beer2_text%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer2_text.png.imageset\beer2_text%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer2_text.png.imageset\beer2_text%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer3_text.png.imageset\beer3_text%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer3_text.png.imageset\beer3_text%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer3_text.png.imageset\beer3_text%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer4_text.png.imageset\beer4_text%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer4_text.png.imageset\beer4_text%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\beer4_text.png.imageset\beer4_text%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\frame.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\frame.png.imageset\frame%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\frame.png.imageset\frame%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\frame.png.imageset\frame%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\record_button.png.imageset\record_button%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\record_button.png.imageset\record_button%402x-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -155,17 +224,26 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Disclaimer.png" />
-    <BundleResource Include="Resources\ChangeButton.png" />
-    <BundleResource Include="Resources\RecordButton.png" />
-    <BundleResource Include="Resources\HoldtheButton.png" />
-    <BundleResource Include="Resources\YourResult.png" />
-    <BundleResource Include="Resources\BeerHalfFull.png" />
     <BundleResource Include="Resources\HomeButton.png" />
-    <BundleResource Include="Resources\Rectangle.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\GoButton.png" />
-    <AndroidResource Include="Resources\TryAgainButton.png" />
+    <Folder Include="Resources\Assets.xcassets\shuffle_button.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\holdthebutton.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\record_button.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\go_button.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\relisten.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\tryagain_button.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\yourresults.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\beer4.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\beer3.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\beer2.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\beer1.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\beer0.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\beer4_text.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\beer3_text.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\beer2_text.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\beer1_text.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\beer0_text.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\frame.png.imageset\" />
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@
 
     <ContentPage.Content>
 
-
+    
     <Grid BackgroundColor="black">
 
         <Grid.RowDefinitions>
@@ -16,23 +16,34 @@
         </Grid.RowDefinitions>
 
         
-            <StackLayout Grid.Row="1" Orientation="Vertical">
-                <Image Source="ListentoRecording.png"/>
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+                <Image Source="relisten.png" HeightRequest="163" VerticalOptions="End" />
 
-                <ImageButton Source="RecordButton.png" Clicked="PlayRecording"/>
+                <ImageButton Source="record_button.png" BackgroundColor="black" HeightRequest="160" VerticalOptions="Start" Clicked="PlayRecording"/>
             </StackLayout>
 
-            <StackLayout Grid.Row="3" Orientation="Horizontal">
-                <Button Text="Try Again"
-                 HorizontalOptions="Start"
+            <StackLayout Grid.Row="3" Orientation="Horizontal" HeightRequest="44">
+                <ImageButton Source="tryagain_button.png"
+                 VerticalOptions="Start"
+                 HorizontalOptions="CenterAndExpand"
+                 Margin="53,0,0,0"
+                 HeightRequest="44"
+                 WidthRequest="115"
+                 BackgroundColor="black"
                  Clicked="SecondPage_OnClicked"/>
 
-                 <Button Text="Go"
-                  HorizontalOptions="End"
+                 <ImageButton Source="go_button.png" Margin="0,0,53,0"
+                  VerticalOptions="StartAndExpand"
+                  HorizontalOptions="CenterAndExpand"
+                  HeightRequest="44"
+                  WidthRequest="115"
+                  BackgroundColor="black"
                   Clicked="PostToBackend_OnClicked"/>
              </StackLayout>
 
         
     </Grid>
-</ContentPage.Content>
+    
+        
+    </ContentPage.Content>
 </ContentPage>

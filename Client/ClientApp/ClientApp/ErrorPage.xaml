@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientApp.ErrorPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="Black">
             <Label Text="{Binding ErrorMessageDisplay}"
+                Margin="25,0,25,0"
+                FontSize="Large"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button Text="Restart"
-               FontSize="Large"
+            <ImageButton Source="tryagain_button.png"
+               BackgroundColor="Black"
                VerticalOptions="CenterAndExpand"
                Clicked="MainPage_OnClicked"/>
         </StackLayout>
