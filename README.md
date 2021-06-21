@@ -46,9 +46,9 @@ Code Replication Steps:
   - Install packages in requirements.txt (pip install)
   - Following you need access to Azure Cognitive Services
   - Add a file named server_keys.py with public attributes to Server-folder:
-      - authorization_key = <your authorization key to use in POST header>
-      - azure_service_key = <your azure service key>
-      - azure_service_region = <your azure service region>
+      - authorization_key = "your authorization key to use in POST header"
+      - azure_service_key = "your azure service key"
+      - azure_service_region = "your azure service region"
   - Run app.py to start the server locally
  
 
