@@ -17,16 +17,20 @@
         </Grid.RowDefinitions>
 
         <StackLayout Grid.Row="1" Orientation="Vertical">
-            <Frame HeightRequest="338" WidthRequest="312" Margin="24,28,24,0" CornerRadius="8" BackgroundColor="#262424">
-                <Frame VerticalOptions="Center" BackgroundColor="#262424"  HeightRequest="297" WidthRequest="266" CornerRadius="8" >
-               
-                     <Label x:Name = "TipsyText" Text= "{Binding Sentence}" TextColor="White" FontAttributes="Bold" FontFamily="Fjalla One" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="Large"/>
-          
+            <Frame HeightRequest="300" WidthRequest="312" Margin="24,28,24,0" CornerRadius="8" BackgroundColor="#262424">
+                <Frame HasShadow="True" BackgroundColor="#262424" HeightRequest="290" WidthRequest="300" CornerRadius="8">
+                    <StackLayout>
+                       
+                     <Label x:Name = "TipsyText" Text= "{Binding Sentence}" Margin="-1,-10" TextColor="White" FontAttributes="Bold" FontFamily="Fjalla One" VerticalOptions="Start" HorizontalOptions="Start" FontSize="Large"/>
+                     <Label x:Name="Source" Text="-Quelle" TextColor="White" FontAttributes="Bold" FontFamily="Fjalla One" FontSize="Large"  VerticalOptions="End" HorizontalOptions="End" Padding="10,10,10,10"/>
+                    </StackLayout>
                 </Frame>
+                
              </Frame>
+            
 
-            <StackLayout Grid.Row="2" Orientation="Vertical" HeightRequest="50">
-                <ImageButton x:Name="Shuffle" Source="shuffle_button.png" Pressed="Shuffle_OnClicked"  HorizontalOptions="End" Margin="0,0,24,0"/>
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+                <ImageButton x:Name="Shuffle" Source="shuffle_button.png" Pressed="Shuffle_OnClicked"  HorizontalOptions="End" Margin="0,0,24,0" />
              </StackLayout>
         </StackLayout>
     </Grid>
@@ -39,10 +43,10 @@
 
             </Grid.RowDefinitions>
 
-        <Image Grid.Row="1" Source="holdthebutton.png" HeightRequest="50" VerticalOptions="End"/>
+        <Image Grid.Row="1" Source="holdthebutton.png" VerticalOptions="End" HeightRequest="55"/>
 
         <ImageButton Grid.Row="2" Source="record_button.png" Pressed="OnButtonPressed"
-            Released="OnButtonReleased" HeightRequest="138" BackgroundColor="black" VerticalOptions="EndAndExpand" />
+            Released="OnButtonReleased" HeightRequest="164" BackgroundColor="black" VerticalOptions="End" />
         </Grid>
      </StackLayout>
 

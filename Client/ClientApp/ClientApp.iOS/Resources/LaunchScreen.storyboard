@@ -15,19 +15,20 @@
                         <viewControllerLayoutGuide type="top" id="Y8P-hJ-Z43"/>
                         <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yd7-JS-zBw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="Icon-60.png" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <rect key="frame" x="216" y="263" width="60" height="60"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="XeS-hu-04f">
+                                <rect key="frame" x="0.0" y="45" width="414" height="817"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" priority="1" id="39"/>
-                            <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" priority="1" id="41"/>
+                            <constraint firstItem="XeS-hu-04f" firstAttribute="top" secondItem="Y8P-hJ-Z43" secondAttribute="bottom" constant="1" id="5Dx-1r-ZEl"/>
+                            <constraint firstAttribute="trailing" secondItem="XeS-hu-04f" secondAttribute="trailing" id="5rZ-2d-h5D"/>
+                            <constraint firstItem="9ZL-r4-8FZ" firstAttribute="top" secondItem="XeS-hu-04f" secondAttribute="bottom" id="mmJ-cz-NIC"/>
+                            <constraint firstItem="XeS-hu-04f" firstAttribute="leading" secondItem="yd7-JS-zBw" secondAttribute="leading" id="tL3-HB-JBO"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-60.png" width="180" height="180"/>
+        <image name="LaunchScreen.png" width="180" height="320"/>
     </resources>
 </document>

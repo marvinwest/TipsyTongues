@@ -4,14 +4,21 @@
              x:Class="ClientApp.ErrorPage">
     <ContentPage.Content>
         <StackLayout BackgroundColor="Black">
-            <Label Text="{Binding ErrorMessageDisplay}"
-                Margin="25,0,25,0"
+            <Frame Margin="24,28,24,0" VerticalOptions="CenterAndExpand" BackgroundColor ="#262424">
+                <Label Text="{Binding ErrorMessageDisplay}"
+                Margin="25,0,10,0"
                 FontSize="Large"
+                TextColor="White"
+                FontAttributes="Bold"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            </Frame>
+           
+
             <ImageButton Source="tryagain_button.png"
+               HeightRequest="60"
                BackgroundColor="Black"
-               VerticalOptions="CenterAndExpand"
+               VerticalOptions="StartAndExpand"
                Clicked="MainPage_OnClicked"/>
         </StackLayout>
     </ContentPage.Content>

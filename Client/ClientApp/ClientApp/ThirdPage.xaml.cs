@@ -84,7 +84,7 @@ namespace ClientApp
                 // If microphone didn´t record a sound, the fileByteArray can´t be build
                 // Therefore the user is forwarded to the errorpage
                 Console.WriteLine(ex.Source);
-                await Navigation.PushAsync(new ErrorPage("You did not record a message, therefore your level of Drunkenness can not be recognized. Try again."));
+                await Navigation.PushAsync(new ErrorPage("You did not record a message, therefore your Level of Drunkenness cannot be recognized."));
                 Navigation.RemovePage(this);
             }
 

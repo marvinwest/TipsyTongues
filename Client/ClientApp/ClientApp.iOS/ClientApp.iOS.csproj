@@ -197,6 +197,10 @@
     <ImageAsset Include="Resources\Assets.xcassets\frame.png.imageset\frame%402x.png" />
     <ImageAsset Include="Resources\Assets.xcassets\record_button.png.imageset\record_button%401x.png" />
     <ImageAsset Include="Resources\Assets.xcassets\record_button.png.imageset\record_button%402x-1.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%401xpng.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -245,5 +249,6 @@
     <Folder Include="Resources\Assets.xcassets\beer1_text.png.imageset\" />
     <Folder Include="Resources\Assets.xcassets\beer0_text.png.imageset\" />
     <Folder Include="Resources\Assets.xcassets\frame.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\" />
   </ItemGroup>
 </Project>

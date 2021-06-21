@@ -16,10 +16,12 @@
         </Grid.RowDefinitions>
 
         
-            <StackLayout Grid.Row="2" Orientation="Vertical">
-                <Image Source="relisten.png" HeightRequest="163" VerticalOptions="End" />
+            <StackLayout Grid.Row="1" Orientation="Vertical">
+                <Grid></Grid>
+                <Image Source="relisten.png" HeightRequest="163" />
 
-                <ImageButton Source="record_button.png" BackgroundColor="black" HeightRequest="160" VerticalOptions="Start" Clicked="PlayRecording"/>
+                <ImageButton Source="record_button.png" BackgroundColor="black" HeightRequest="164" Clicked="PlayRecording"/>
+
             </StackLayout>
 
             <StackLayout Grid.Row="3" Orientation="Horizontal" HeightRequest="44">
