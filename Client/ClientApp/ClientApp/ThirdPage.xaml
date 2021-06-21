@@ -3,28 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientApp.ThirdPage">
 
-    <ContentPage.Content>
+    <ContentPage.Content ThirdPage.HasNavigationBar="False">
 
     
     <Grid BackgroundColor="black">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+           
         </Grid.RowDefinitions>
 
         
             <StackLayout Grid.Row="1" Orientation="Vertical">
-                <Grid></Grid>
-                <Image Source="relisten.png" HeightRequest="163" />
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                 </Grid.RowDefinitions>
+                <Image Grid.Row="1" Source="relisten.png" HeightRequest="163" />
 
-                <ImageButton Source="record_button.png" BackgroundColor="black" HeightRequest="164" Clicked="PlayRecording"/>
-
+                <ImageButton Grid.Row="2" Source="record_button.png" BackgroundColor="black" HeightRequest="150" Clicked="PlayRecording"/>
+                </Grid>
             </StackLayout>
 
-            <StackLayout Grid.Row="3" Orientation="Horizontal" HeightRequest="44">
+            <StackLayout Margin="0,30,0,0" Grid.Row="4" Orientation="Horizontal" HeightRequest="44">
                 <ImageButton Source="tryagain_button.png"
                  VerticalOptions="Start"
                  HorizontalOptions="CenterAndExpand"
@@ -35,7 +40,7 @@
                  Clicked="SecondPage_OnClicked"/>
 
                  <ImageButton Source="go_button.png" Margin="0,0,53,0"
-                  VerticalOptions="StartAndExpand"
+                  VerticalOptions="Start"
                   HorizontalOptions="CenterAndExpand"
                   HeightRequest="44"
                   WidthRequest="115"

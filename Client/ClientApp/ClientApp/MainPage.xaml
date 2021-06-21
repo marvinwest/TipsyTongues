@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientApp.MainPage">
+    
 
     <StackLayout >
 
     
      <ImageButton Source="Disclaimer.png"
-                Clicked= "NavigateButton_OnClicked"/>
+                Clicked= "NavigateButton_OnClicked" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill"/>
           
              
 

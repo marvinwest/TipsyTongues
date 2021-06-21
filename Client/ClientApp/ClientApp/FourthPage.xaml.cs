@@ -20,12 +20,18 @@ namespace ClientApp
                 OnPropertyChanged("LevelOfDrunkenness"); }
         }
 
+        
+
         public FourthPage(int levelOfDrunkennness)
         {
             BindingContext = this;
             LevelOfDrunkennessDisplay = levelOfDrunkennness;
             InitializeComponent();
+
+            
         }
+
+       
 
         private async void SecondPage_OnClicked(object sender, EventArgs e)
         {

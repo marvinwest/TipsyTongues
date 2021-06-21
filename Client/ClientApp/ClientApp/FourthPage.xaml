@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientApp.FourthPage">
-    <ContentPage.Content>
+    <ContentPage.Content FourthPage.HasNavigationBar="False">
+
         <StackLayout BackgroundColor="Black">
             <Grid>
                 <Grid.RowDefinitions>
@@ -37,6 +38,7 @@
             <ImageButton Grid.Row="4"
                Source="HomeButton.png"
             Margin="0,0,0,26"
+                BackgroundColor="Black"
                HeightRequest="104"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="EndAndExpand"
