@@ -35,9 +35,22 @@ Code Replication Steps:
 
 Back End:
 - Uses Python Flask for serverside developing
-- Uses Speech-Recognition-API to get Text from audiofile
+- Uses Azure Cognitive Services pronunciation recognition to compare given sentence to audiofile
 - Return Level of drunkenness based on the comparison
 
+Code Replication Steps:
+  - Install python 3
+  - download Server from the repository
+  - Add a python virtual environment (venv) in the Server-folder
+  - Activate the virtual environment
+  - Install packages in requirements.txt (pip install)
+  - Following you need access to Azure Cognitive Services
+  - Add a file named server_keys.py with public attributes to Server-folder:
+      - authorization_key = <your authorization key to use in POST header>
+      - azure_service_key = <your azure service key>
+      - azure_service_region = <your azure service region>
+  - Run app.py to start the server locally
+ 
 
 Designer: Tabea Graszynski</br>
 Frontend: Jule Emily Buschmann</br>
