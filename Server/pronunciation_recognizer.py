@@ -1,6 +1,7 @@
 import azure.cognitiveservices.speech as speechsdk
 
 from pronunciation_result import PronunciationResult
+import server_keys as keys
 
 
 # !!! DO NOT PUSH TO GITHUB WITH VALID speech_key !!!
@@ -9,7 +10,7 @@ from pronunciation_result import PronunciationResult
 # speech-key: your subscription key from Azure
 # service_region: The region you declared in your Azure-profile
 
-speech_key, service_region = "add key here", "add service region here"
+speech_key, service_region = keys.azure_service_key, keys.azure_service_region
 
 # only functions for short audiofiles.
 # maybe use continuous recognition instead.
@@ -24,6 +25,7 @@ def recognize_pronunciation(language_code, sentence, filename):
 	pronunciation_assessment_config.apply_to(speech_recognizer)
 
 	response = speech_recognizer.recognize_once()
+	print(response)
 
 	try:
 		result = __build_pronunciation_result(speechsdk.PronunciationAssessmentResult(response))

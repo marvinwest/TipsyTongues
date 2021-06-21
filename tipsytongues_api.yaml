@@ -8,7 +8,7 @@ info:
   description: |
     Get the Level of Drunkenness through Speech Recognition
 
-    All endpoints of this API require authorization with a Bearer JWT token - ask the API provider for details how to obtain the token.
+    All endpoints of this API require authorization with a key in the header - ask the API provider for details how to obtain the key.
   version: 0.0.1
   contact:
     name: to be declared
@@ -16,6 +16,13 @@ tags:
   - name: Recognition
 paths:
   "/recognition/audio":
+    parameters:
+      - name: authorization
+        in: header
+        schema:
+          type: string
+        required: true
+        description: The key to access the Server
     post:
       tags: [Recognition]
       summary: Get the Level of Drunkenness
@@ -46,9 +53,13 @@ components:
       description: Sentence the user had to read and audioFile.
       type: object
       required:
+        - languageCode
         - sentence
         - audioFile
       properties:
+        languageCode:
+          type: string
+          description: The language code for the language to do the recognition in
         sentence:
           type: string
           description: Sentence the user has to read

@@ -1,9 +1,13 @@
 from flask import Flask, request
 from flask_cors import CORS
+from flask_api import status
 import os
 
-import pronunciation_recognizer as recognizer
 import wave_file_converter as converter
+import pronunciation_recognizer as recognizer
+import drunkenness_calculator as calculator
+import server_keys as keys
+
 
 app = Flask(__name__)
 # CORS allows other programming languages to send a request
@@ -17,19 +21,27 @@ CORS(app)
 def post_recognition():
 	# language code to determine in which language the pronunciation regocnition should be
 	# mocked for now
-	language_code = "de-DE"
-	sentence = request.form["sentence"]
-	audio_file = request.files.get("audioFile")
+	try:
+		authorization = request.headers["authorization"]
+		language_code = request.form["languageCode"]
+		sentence = request.form["sentence"]
+		audio_file = request.files.get("audioFile")
+	except KeyError:
+		return "Invalid Request", status.HTTP_400_BAD_REQUEST
+	if(authorization != keys.authorization_key):
+		return "Invalid Request", status.HTTP_400_BAD_REQUEST
+
 	filename = "pronunciation_file.wav"
 	converter.convert_to_wave_and_save(filename, audio_file)
 
 	recognition_result = recognizer.recognize_pronunciation(language_code, sentence, filename)
+	level_of_drunkenness = calculator.calculate_drunkenness(recognition_result)
 
 	# delete temporary file after recognition
 	os.remove(filename)
 
 	print(__build_response(recognition_result))
-	return {"levelOfDrunkenness" : 3}
+	return {"levelOfDrunkenness" : level_of_drunkenness}
 
 def __build_response(recognition_result):
 	return {
