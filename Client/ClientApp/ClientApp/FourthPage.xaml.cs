@@ -27,8 +27,9 @@ namespace ClientApp
             BindingContext = this;
             LevelOfDrunkennessDisplay = levelOfDrunkennness;
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
 
-            
+
         }
 
        

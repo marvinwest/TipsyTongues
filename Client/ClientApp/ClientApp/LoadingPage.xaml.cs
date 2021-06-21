@@ -20,6 +20,7 @@ namespace ClientApp
         public LoadingPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

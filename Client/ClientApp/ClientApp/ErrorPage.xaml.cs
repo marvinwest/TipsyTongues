@@ -24,6 +24,7 @@ namespace ClientApp
             BindingContext = this;
             ErrorMessageDisplay = errorMessage;
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private async void MainPage_OnClicked(object sender, EventArgs e)

@@ -32,6 +32,8 @@ namespace ClientApp
             RandomizeSentence();
             BindingContext = this;
             InitializeComponent();
+  
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
        

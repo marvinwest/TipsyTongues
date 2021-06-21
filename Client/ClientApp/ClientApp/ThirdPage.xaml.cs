@@ -28,6 +28,7 @@ namespace ClientApp
             this.audioFilePath = audioFilePath;
             this.sentence = sentence;
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         async void PlayRecording(object sender, EventArgs e)

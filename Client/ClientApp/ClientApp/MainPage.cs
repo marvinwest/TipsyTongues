@@ -15,11 +15,12 @@ namespace ClientApp
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
 
-            
         }
 
-       
+
+
 
         private async void NavigateButton_OnClicked(object sender, EventArgs e)
         {
