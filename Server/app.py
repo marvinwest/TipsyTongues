@@ -1,3 +1,4 @@
+
 from flask import Flask, request
 from flask_cors import CORS
 from flask_api import status
@@ -19,8 +20,6 @@ CORS(app)
 # return a mocked response according to defined API
 @app.route("/recognition/audio", methods=["POST"])
 def post_recognition():
-	# language code to determine in which language the pronunciation regocnition should be
-	# mocked for now
 	try:
 		authorization = request.headers["authorization"]
 		language_code = request.form["languageCode"]
@@ -28,6 +27,12 @@ def post_recognition():
 		audio_file = request.files.get("audioFile")
 	except KeyError:
 		return "Invalid Request", status.HTTP_400_BAD_REQUEST
+	# For Testing in Frontend-Development we do not want to use up our
+	# 5 hours of free access to Azure Cognitive Services
+	# so if we send the frontend-testing key we want to return
+	# a mocked response
+	if (authorization == keys.frontend_testing_key):
+		return {"levelOfDrunkenness": 3}
 	if(authorization != keys.authorization_key):
 		return "Invalid Request", status.HTTP_400_BAD_REQUEST
 
@@ -37,7 +42,6 @@ def post_recognition():
 	recognition_result = recognizer.recognize_pronunciation(language_code, sentence, filename)
 	level_of_drunkenness = calculator.calculate_drunkenness(recognition_result)
 
-	# delete temporary file after recognition
 	os.remove(filename)
 
 	print(__build_response(recognition_result))
