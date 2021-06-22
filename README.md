@@ -49,6 +49,7 @@ Code Replication Steps:
       - authorization_key = "your authorization key to use in POST header"
       - azure_service_key = "your azure service key"
       - azure_service_region = "your azure service region"
+      - frontend_testing_key = "your frontend testing key"
   - Run app.py to start the server locally
  
 
