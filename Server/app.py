@@ -2,6 +2,7 @@
 from flask import Flask, request
 from flask_cors import CORS
 from flask_api import status
+import random
 import os
 
 import wave_file_converter as converter
@@ -27,6 +28,7 @@ def post_recognition():
 		audio_file = request.files.get("audioFile")
 	except KeyError:
 		return "Invalid Request", status.HTTP_400_BAD_REQUEST
+
 	# For Testing in Frontend-Development we do not want to use up our
 	# 5 hours of free access to Azure Cognitive Services
 	# so if we send the frontend-testing key we want to return
@@ -36,7 +38,11 @@ def post_recognition():
 	if(authorization != keys.authorization_key):
 		return "Invalid Request", status.HTTP_400_BAD_REQUEST
 
-	filename = "pronunciation_file.wav"
+	# For two or more requests at the same time, we need to randomize
+	# the filename, so every file has a unique name
+	# otherwise a PermissionError occurs
+	filename_randomizer = random.randint(0, 9999999)
+	filename = "pronunciation_file" + "_" + str(filename_randomizer) + ".wav"
 	converter.convert_to_wave_and_save(filename, audio_file)
 
 	recognition_result = recognizer.recognize_pronunciation(language_code, sentence, filename)
