@@ -50,6 +50,7 @@ namespace ClientApp
         //TODO: use Navigation.RemovePage on every change of pages!!!
         private async void SecondPage_OnClicked(object sender, EventArgs e)
         {
+            audioPlayer.Pause();
             await Navigation.PushAsync(new SecondPage());
             Navigation.RemovePage(this);
         }
@@ -65,14 +66,9 @@ namespace ClientApp
         //  - Apple: Add to to root clientapp.ios-folder, set Build action to BundleResource
         private async void PostToBackend_OnClicked(object sender, EventArgs e)
         {
-            // Loads loadingPage at beginning of the Method
-            ContentPage loadingPage = new LoadingPage();
-            await Navigation.PushAsync(loadingPage);
+            audioPlayer.Pause();
 
-            // defines the content of the payload that is forwarded to Backend
             MultipartFormDataContent content = new MultipartFormDataContent();
-            String url = "https://tipsy-tongues.herokuapp.com/recognition/audio";
-
             try
             {
                 // Reads Data from the audioFile into a bytearray
@@ -85,10 +81,16 @@ namespace ClientApp
             {
                 // If microphone didn´t record a sound, the fileByteArray can´t be build
                 // Therefore the user is forwarded to the errorpage
-                Console.WriteLine(ex.Source);
                 await Navigation.PushAsync(new ErrorPage("You did not record a message, therefore your Level of Drunkenness cannot be recognized."));
                 Navigation.RemovePage(this);
             }
+
+            // Loads loadingPage at beginning of the Method
+            ContentPage loadingPage = new LoadingPage();
+            await Navigation.PushAsync(loadingPage);
+
+            // defines the content of the payload that is forwarded to Backend
+            String url = "https://tipsy-tongues.herokuapp.com/recognition/audio";
 
             // Builds content from given sentence and languageCode
             // Adds it to the Payload
@@ -116,8 +118,8 @@ namespace ClientApp
             // Forwards the returned levelOfDrunkenness to the Next Page
             // Closes this Page and the loadingpage
             await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
-            Navigation.RemovePage(this);
             Navigation.RemovePage(loadingPage);
+            Navigation.RemovePage(this);
         }
 
     }
