@@ -23,18 +23,14 @@
             
             <StackLayout Grid.Row="2">
             
-            <Image Source="beer4.png" HeightRequest="245" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+            <Image Source="{Binding LevelOfDrunkennessImage}" HeightRequest="245" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
 
-            <Label Text="{Binding LevelOfDrunkennessDisplay}"
+            <Label Text="{Binding LevelOfDrunkennessText}"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center"
                    TextColor="White"/>
-            <Image Source="beer4_text.png" HeightRequest="66" />
-             </StackLayout>
+                </StackLayout>
               
-            
-            
-
             <ImageButton Grid.Row="4"
                Source="HomeButton.png"
             Margin="0,0,0,26"
