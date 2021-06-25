@@ -16,6 +16,8 @@ namespace ClientApp
 
     public partial class ThirdPage : ContentPage
     {
+        private static String LANGUAGE_CODE = "en-US";
+        private static String AUTHORIZATION = "12345678";
 
         private readonly AudioPlayer audioPlayer;
 
@@ -88,14 +90,17 @@ namespace ClientApp
                 Navigation.RemovePage(this);
             }
 
-            // Builds StringContent from given sentence
+            // Builds content from given sentence and languageCode
             // Adds it to the Payload
             StringContent sentenceContent = new StringContent(sentence);
             content.Add(sentenceContent, "sentence");
+            StringContent languageCodeContent = new StringContent(LANGUAGE_CODE);
+            content.Add(languageCodeContent, "languageCode");
 
             // Builds HTTPClient
             // Forwards the PostRequest with content-payload to backend
             HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("authorization", AUTHORIZATION);
             HttpResponseMessage response = await httpClient.PostAsync(url, content);
 
             // writes content of the HTTPResponse to console
