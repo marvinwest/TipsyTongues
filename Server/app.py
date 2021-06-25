@@ -50,17 +50,9 @@ def post_recognition():
 
 	os.remove(filename)
 
-	print(__build_response(recognition_result))
 	return {"levelOfDrunkenness" : level_of_drunkenness}
-
-def __build_response(recognition_result):
-	return {
-		"accuracy": recognition_result.get_accuracy_score(),
-		"completeness": recognition_result.get_completeness_score(),
-		"fluency": recognition_result.get_fluency_score(),
-		"aggregated": recognition_result.get_pronunciation_score()}
 
 # app.run(<debug = True>) only for testpurposes
 # Do not use it in deployment
 if __name__ == "__main__":
-	app.run(debug = True)
+	app.run()

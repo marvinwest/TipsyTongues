@@ -25,7 +25,6 @@ def recognize_pronunciation(language_code, sentence, filename):
 	pronunciation_assessment_config.apply_to(speech_recognizer)
 
 	response = speech_recognizer.recognize_once()
-	print(response)
 
 	try:
 		result = __build_pronunciation_result(speechsdk.PronunciationAssessmentResult(response))
