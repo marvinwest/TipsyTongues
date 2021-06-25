@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Timers;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
@@ -12,6 +14,8 @@ namespace ClientApp
 {
     public partial class SecondPage : ContentPage
     {
+        private static Timer recordingTimer;
+
         private readonly AudioRecorderService AudioRecorderService;
 
         private String[] sentences = { "Wrap rage, also called package rage, is the common name for heightened levels of anger and frustration resulting from the inability to open packaging, particularly some heat-sealed plastic blister packs and clamshells.", "You also took the fine jewelry I gave you, the jewelry made of my gold and silver, and you made for yourself male idols and engaged in prostitutionwith them.", "Bonsai Kitten was a hoax website that claimed to provide instructions on how to raise a kitten in a jar, so as to mold the bones of the kitten into the shape of the jar as the cat grows, like how a bonsai plant is shaped." };
@@ -38,17 +42,23 @@ namespace ClientApp
 
        
 
-        async void OnButtonPressed (System.Object sender, System.EventArgs e)
+        async void OnButtonPressed (Object sender, EventArgs e)
         {
+            recordingTimer = new Timer(14999);
+            recordingTimer.Elapsed += new ElapsedEventHandler(OnRecordingTimeOut);
+            recordingTimer.Enabled = true;
             await AudioRecorderService.StartRecording();
         }
 
-        
+        private async void OnRecordingTimeOut(object sender, ElapsedEventArgs e)
+        {
+            await Task.Run(() => Device.BeginInvokeOnMainThread(() => OnButtonReleased(sender, e)));
+        }
 
         private async void OnButtonReleased (object sender, EventArgs e)
         {
             await AudioRecorderService.StopRecording();
-            
+
             String audioFilePath = AudioRecorderService.GetAudioFilePath();
 
             await Navigation.PushAsync(new ThirdPage(audioFilePath, sentence));

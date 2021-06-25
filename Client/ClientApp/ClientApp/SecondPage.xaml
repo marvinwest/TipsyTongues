@@ -45,7 +45,7 @@
 
         <Image Grid.Row="1" Source="holdthebutton.png" VerticalOptions="End" HeightRequest="55"/>
 
-        <ImageButton Grid.Row="2" Source="record_button.png" Pressed="OnButtonPressed"
+        <ImageButton x:Name="recordingButton" Grid.Row="2" Source="record_button.png" Pressed="OnButtonPressed"
             Released="OnButtonReleased" HeightRequest="164" BackgroundColor="black" VerticalOptions="End" />
         </Grid>
      </StackLayout>
