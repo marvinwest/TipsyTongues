@@ -2,8 +2,10 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("FjallaOne-Regular.ttf", Alias = "fjallaOne")]
 namespace ClientApp
 {
+    
     public partial class App : Application
     {
         public App()

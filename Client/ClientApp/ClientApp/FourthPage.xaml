@@ -26,6 +26,7 @@
             <Image Source="{Binding LevelOfDrunkennessImage}" HeightRequest="245" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
 
             <Label Text="{Binding LevelOfDrunkennessText}"
+                   FontFamily="fjallaOne"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center"
                    TextColor="White"/>
