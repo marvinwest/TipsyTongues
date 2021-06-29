@@ -23,7 +23,7 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>ClientApp</string>
+	<string>TipsyTongues</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.companyname.ClientApp</string>
 	<key>CFBundleVersion</key>
