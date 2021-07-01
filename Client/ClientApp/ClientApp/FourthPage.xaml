@@ -13,8 +13,8 @@
                 <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-            <StackLayout>
-                <Image Source="yourresults.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
+            <StackLayout Grid.Row="1">
+                <Label Text="YOUR RESULT" TextColor="#FFF" FontFamily="FjallaOne" FontSize="40" VerticalOptions ="Start" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
 
             <StackLayout Grid.Row="2">
@@ -23,20 +23,22 @@
             
             <StackLayout Grid.Row="2">
             
-            <Image Source="{Binding LevelOfDrunkennessImage}" HeightRequest="245" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+            <Image Source="{Binding LevelOfDrunkennessImage}" HeightRequest="254"  Margin="99,20,54,0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
 
             <Label Text="{Binding LevelOfDrunkennessText}"
-                   FontFamily="fjallaOne"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center"
-                   TextColor="White"/>
+                   FontFamily="FjallaOne"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   FontSize="26"/>
                 </StackLayout>
               
             <ImageButton Grid.Row="4"
-               Source="HomeButton.png"
-            Margin="0,0,0,26"
+               Source="home_button.png"
+               Margin="0,0,0,10"
                 BackgroundColor="Black"
-               HeightRequest="104"
+               HeightRequest="164"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="EndAndExpand"
                Clicked="SecondPage_OnClicked"/>

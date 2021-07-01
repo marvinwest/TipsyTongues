@@ -83,9 +83,6 @@
     <ImageAsset Include="Resources\Assets.xcassets\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -114,54 +111,6 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Resources\Assets.xcassets\record_button.png.imageset\record_button%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\go_button.png.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\go_button.png.imageset\go_button%400,5x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\go_button.png.imageset\go_button%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\go_button.png.imageset\go_button%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\relisten.png.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\relisten.png.imageset\relisten%400,5x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\relisten.png.imageset\relisten%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\relisten.png.imageset\relisten%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\tryagain_button.png.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\tryagain_button.png.imageset\tryagain_button%400,5x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\tryagain_button.png.imageset\tryagain_button%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\tryagain_button.png.imageset\tryagain_button%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\yourresults.png.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\yourresults.png.imageset\yourresults%400,5x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\yourresults.png.imageset\yourresults%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\yourresults.png.imageset\yourresults%402x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Resources\Assets.xcassets\beer4.png.imageset\Contents.json">
@@ -273,10 +222,14 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024.png" />
     <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\disclaimer.png" />
     <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\disclaimer%400,5x.png" />
     <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\disclaimer%401x.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\Image-1.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\disclaimer%402x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\Image-3.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\home_button.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\home_button.png.imageset\home_button.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\home_button.png.imageset\home_button%400,5.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\home_button.png.imageset\home_button%401x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -303,12 +256,10 @@
       <Name>ClientApp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\HomeButton.png" />
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Folder Include="Resources\Assets.xcassets\Disclaimer.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\home_button.png.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\MainPage.xaml">

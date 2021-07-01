@@ -6,48 +6,66 @@
     <ContentPage.Content>
 
     
-    <Grid BackgroundColor="black">
+    <Grid BackgroundColor="black" >
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
            
         </Grid.RowDefinitions>
 
-        
+        <StackLayout Spacing="50">
             <StackLayout Grid.Row="1" Orientation="Vertical">
-                <Grid>
+                <Grid >
                 <Grid.RowDefinitions>
+                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
                  </Grid.RowDefinitions>
-                <Image Grid.Row="1" Source="relisten.png" HeightRequest="163" />
 
-                <ImageButton Grid.Row="2" Source="record_button.png" BackgroundColor="black" HeightRequest="150" Clicked="PlayRecording"/>
-                </Grid>
+                 <StackLayout Grid.Row="2">
+                 <Label  Text= "CLICK HERE TO LISTEN TO YOUR" FontSize="24" TextColor="#FFF" FontFamily="FjallaOne" HorizontalOptions="Center" />
+                 <Label Text="RECORDING" FontSize="24" TextColor="#FFF" FontFamily="FjallaOne" HorizontalOptions="Center"/>
+                 </StackLayout>
+                 <ImageButton Grid.Row="3" Source="record_button.png" BackgroundColor="black" HeightRequest="150" Clicked="PlayRecording"/>
+
+                
+                 </Grid>
             </StackLayout>
 
-            <StackLayout Margin="0,30,0,0" Grid.Row="4" Orientation="Horizontal" HeightRequest="44">
-                <ImageButton Source="tryagain_button.png"
+            <StackLayout Margin="0,60,0,0" Grid.Row="4" Orientation="Horizontal" HeightRequest="44">
+                <Button
+                 Text="TRY AGAIN!"
+                 FontFamily="FjallaOne"
+                 CornerRadius="8"
+                 FontSize="20"
+                 BackgroundColor="#262424"
+                 TextColor="#FFF"
                  VerticalOptions="Start"
                  HorizontalOptions="CenterAndExpand"
                  Margin="53,0,0,0"
                  HeightRequest="44"
                  WidthRequest="115"
-                 BackgroundColor="black"
                  Clicked="SecondPage_OnClicked"/>
 
-                 <ImageButton Source="go_button.png" Margin="0,0,53,0"
+                 <Button
+                  Text="GO!"
+                  FontFamily="FjallaOne"
+                  CornerRadius="8"
+                  FontSize="20"
+                  TextColor="#FFF"
+                  Margin="0,0,53,0"
                   VerticalOptions="Start"
                   HorizontalOptions="CenterAndExpand"
                   HeightRequest="44"
                   WidthRequest="115"
-                  BackgroundColor="black"
+                  BackgroundColor="#262424"
                   Clicked="PostToBackend_OnClicked"/>
              </StackLayout>
-
+            </StackLayout>
         
     </Grid>
     

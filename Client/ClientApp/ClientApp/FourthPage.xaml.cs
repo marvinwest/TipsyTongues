@@ -52,13 +52,13 @@ namespace ClientApp
         {
             switch (levelOfDrunkenness)
             {
-                case 0: LevelOfDrunkennessText = "sounds sober, amen"; LevelOfDrunkennessImage = "beer0.png"; break;
-                case 1: LevelOfDrunkennessText = "the night is still young"; LevelOfDrunkennessImage = "beer1.png"; break;
-                case 2: LevelOfDrunkennessText = "somebody is getting tipsy"; LevelOfDrunkennessImage = "beer2.png"; break;
-                case 3: LevelOfDrunkennessText = "sloppy drunk (absolutely hammered?)"; LevelOfDrunkennessImage = "beer3.png"; break;
-                case 4: LevelOfDrunkennessText = "you probably had one too many"; LevelOfDrunkennessImage = "beer4.png"; break;
+                case 0: LevelOfDrunkennessText = "YOU'RE SOBER, WHY?"; LevelOfDrunkennessImage = "beer0.png"; break;
+                case 1: LevelOfDrunkennessText = "SLIGHTLY TIPSY - MAYBE A\nSHOT WOULD HELP"; LevelOfDrunkennessImage = "beer1.png"; break;
+                case 2: LevelOfDrunkennessText = "SOMEBODY'S GETTING\nTIPSY"; LevelOfDrunkennessImage = "beer2.png"; break;
+                case 3: LevelOfDrunkennessText = "SLOPPY DRUNK - OF COURSE\nIT'S A GOOD IDEA TO GET\nANOTHER ROUND"; LevelOfDrunkennessImage = "beer3.png"; break;
+                case 4: LevelOfDrunkennessText = "ABSOLUTELY HAMMERED - GO\nGET YOURSELF A GLASS OF WATER"; LevelOfDrunkennessImage = "beer4.png"; break;
                 default:
-                    await Navigation.PushAsync(new ErrorPage("Something wnet wrong, please try again"));
+                    await Navigation.PushAsync(new ErrorPage("Something went wrong, please try again"));
                     Navigation.RemovePage(this);
                     break;
             }
