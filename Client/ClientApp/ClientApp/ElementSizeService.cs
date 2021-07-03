@@ -26,5 +26,7 @@ namespace ClientApp
         {
             return screenWidth * percentage;
         }
+
     }
+
 }

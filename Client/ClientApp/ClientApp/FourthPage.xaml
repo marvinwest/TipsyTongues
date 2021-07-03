@@ -22,29 +22,36 @@
                 <StackLayout Grid.Row="0"
                              Grid.Column="1">
                     <Label Text="YOUR RESULT"
-                       FontFamily="fjallaOne"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand"
-                       TextColor="White"/>
+                           FontFamily="fjallaOne"
+                           FontSize="40"
+                           FontAttributes="Bold"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           TextColor="White"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="2"
                              Grid.Column="1">
                     <Image Source="{Binding LevelOfDrunkennessImage}"
-                                           HeightRequest="{Binding LevelOfDrunkennessImageHeight}"
-                                           WidthRequest="{Binding LevelOfDrunkennessImageWidth}"
-                                           VerticalOptions="Center"
-                                           HorizontalOptions="Center"
-                                           Aspect="AspectFit"/>
+                           HeightRequest="{Binding LevelOfDrunkennessImageHeight}"
+                           WidthRequest="{Binding LevelOfDrunkennessImageWidth}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFit"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="3"
                              Grid.Column="1">
                     <Label Text="{Binding LevelOfDrunkennessText}"
-                                           FontFamily="fjallaOne"
-                                           VerticalOptions="Center"
-                                           HorizontalOptions="Center"
-                                           TextColor="White"/>
+                           FontFamily="fjallaOne"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="White"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Start"
+                           FontSize="20"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="1"
