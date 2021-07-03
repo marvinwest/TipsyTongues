@@ -4,14 +4,16 @@
              xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="ClientApp.LoadingPage">
     <ContentPage.Content LoadingPage.HasNavigationBar="False">
-        <StackLayout>
+        <StackLayout BackgroundColor="Black">
             <forms:AnimationView 
                 x:Name="animationView" 
-                Animation="Mercury_navigation_refresh.json"
+                Animation="beer.json"
                 AnimationSource="AssetOrBundle"
                 RepeatMode="Infinite"
                 VerticalOptions="FillAndExpand" 
-                HorizontalOptions="FillAndExpand" />
+                HorizontalOptions="FillAndExpand"
+                Scale="5"
+                />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
