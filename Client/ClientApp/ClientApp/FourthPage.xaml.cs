@@ -12,30 +12,30 @@ namespace ClientApp
     
     public partial class FourthPage : ContentPage
     {
-        private String levelOfDrunkennessText;
-        public String LevelOfDrunkennessText
-        {
-            get { return levelOfDrunkennessText; }
-            set
-            {
-                levelOfDrunkennessText = value;
-                OnPropertyChanged("LevelOfDrunkenness");
-            }
-        }
+        private ElementSizeService elementSizeService;
 
+        private String levelOfDrunkennessText;
         private String levelOfDrunkennessImage;
-        public String LevelOfDrunkennessImage
-        {
-            get { return levelOfDrunkennessImage; }
-            set
-            {
-                levelOfDrunkennessImage = value;
-                OnPropertyChanged("LevelOfDrunkenness");
-            }
-        }
+
+        private Double frameHeight;
+        private Double frameWidth;
+
+        private Double levelOfDrunkennessImageHeight;
+        private Double levelOfDrunkennessImageWidth;
+
+        private Double homeButtonHeight;
+        private Double homeButtonWidth;
+
 
         public FourthPage(int levelOfDrunkenness)
         {
+            elementSizeService = new ElementSizeService();
+            FrameHeight = elementSizeService.calculateElementHeight(0.65);
+            FrameWidth = elementSizeService.calculateElementWidth(0.9);
+            LevelOfDrunkennessImageHeight = elementSizeService.calculateElementHeight(0.4);
+            LevelOfDrunkennessImageWidth = elementSizeService.calculateElementWidth(0.9);
+            HomeButtonHeight = elementSizeService.calculateElementHeight(0.125);
+            HomeButtonWidth = elementSizeService.calculateElementWidth(0.9);
             BindingContext = this;
             BuildLevelOfDrunkennessDisplay(levelOfDrunkenness);
             InitializeComponent();
@@ -62,6 +62,63 @@ namespace ClientApp
                     Navigation.RemovePage(this);
                     break;
             }
+        }
+
+        public String LevelOfDrunkennessText
+        {
+            get { return levelOfDrunkennessText; }
+            set
+            {
+                levelOfDrunkennessText = value;
+                OnPropertyChanged("LevelOfDrunkenness");
+            }
+        }
+
+        public String LevelOfDrunkennessImage
+        {
+            get { return levelOfDrunkennessImage; }
+            set
+            {
+                levelOfDrunkennessImage = value;
+                OnPropertyChanged("LevelOfDrunkenness");
+            }
+        }
+
+
+        public Double FrameHeight
+        {
+            get { return frameHeight; }
+            set { frameHeight = value; }
+        }
+
+        public Double FrameWidth
+        {
+            get { return frameWidth; }
+            set { frameWidth = value; }
+        }
+
+        public Double LevelOfDrunkennessImageHeight
+        {
+            get { return levelOfDrunkennessImageHeight; }
+            set { levelOfDrunkennessImageHeight = value; }
+        }
+
+        public Double LevelOfDrunkennessImageWidth
+        {
+            get { return levelOfDrunkennessImageWidth; }
+            set { levelOfDrunkennessImageWidth = value; }
+        }
+
+        public Double HomeButtonHeight
+        {
+            get { return homeButtonHeight; }
+            set { homeButtonHeight = value; }
+        }
+
+        public Double HomeButtonWidth
+        {
+            get { return homeButtonWidth; }
+            set { homeButtonWidth = value; }
         }
 
     }

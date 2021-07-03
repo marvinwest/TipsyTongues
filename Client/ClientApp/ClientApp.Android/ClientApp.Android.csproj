@@ -189,7 +189,9 @@
       </Generator>
     </AndroidResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Rectangle_Results.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClientApp\ClientApp.csproj">
       <Project>{A2DD26F4-0934-42AE-AC59-4F746EDA5C50}</Project>
