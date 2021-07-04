@@ -25,8 +25,8 @@
                            FontFamily="fjallaOne"
                            FontSize="40"
                            FontAttributes="Bold"
-                           VerticalOptions="CenterAndExpand"
-                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="End"
+                           HorizontalOptions="Center"
                            HorizontalTextAlignment="Center"
                            VerticalTextAlignment="Center"
                            TextColor="White"/>

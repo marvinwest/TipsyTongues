@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Lottie.Forms;
 
 namespace ClientApp
 {
 
     public partial class LoadingPage : ContentPage
     {
+        private ElementSizeService elementSizeService;
 
-        //Lottie:
-        //Placeholder-File = Mercury_navigation_refresh.json TODO: replace by actual animation, wait for design
-        //  - Android: Add to Assets-folder, set Build action to AndroidAsset in Properties
-        //  - Apple: Add to to root clientapp.ios-folder, set Build action to BundleResource
         public LoadingPage()
         {
             InitializeComponent();
+            
+            double animationHeight = animationView.Height;
+            Console.WriteLine(animationHeight);
             NavigationPage.SetHasNavigationBar(this, false);
         }
     }
