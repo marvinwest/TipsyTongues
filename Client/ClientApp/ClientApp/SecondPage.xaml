@@ -30,6 +30,7 @@
 
 
                             <Frame
+                                Margin="0,30,0,0"
                                 HeightRequest="{Binding FrameHeight}"
                                 WidthRequest="{Binding FrameWidth}"
                                 CornerRadius="8"

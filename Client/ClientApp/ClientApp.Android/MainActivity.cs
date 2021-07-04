@@ -6,10 +6,11 @@ using Android.Runtime;
 using Android.OS;
 using Plugin.Permissions;
 using Lottie.Forms.Platforms.Android;
+using Xamarin.Forms;
 
 namespace ClientApp.Droid
 {
-    [Activity(Label = "TipsyTongues", Icon = "@mipmap/TipsyTonguesIcon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    [Activity(Label = "TipsyTongues", Icon = "@mipmap/TipsyTonguesIcon", ScreenOrientation = ScreenOrientation.Portrait, Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
