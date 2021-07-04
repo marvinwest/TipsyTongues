@@ -6,70 +6,93 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="ClientApp.SecondPage">
     <ContentPage.Content >
+        <StackLayout BackgroundColor="Black">
+            <Grid x:Name="mainGrid">
 
-   
-   <StackLayout BackgroundColor="Black">
-    <Grid x:Name="mainGrid">
-        <Grid.Padding>  
-         <OnIdiom x:TypeArguments="Thickness" Tablet="100, 10, 100, 10" Phone="10, 20, 10, 10" />  
-        </Grid.Padding>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+                <StackLayout Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="90*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
 
-        <StackLayout Grid.Row="2">
-            <Frame
-                  HeightRequest="300"
-                   WidthRequest="312"
-                   Margin="24,28,24,0"
-                   CornerRadius="8"
-                   BackgroundColor="#262424">
-                <Frame
-                    HasShadow="True"
-                    BackgroundColor="#262424"
-                    HeightRequest="290"
-                    WidthRequest="300"
-                    CornerRadius="8">
-
-                    <StackLayout Spacing="30">
-                     <Label x:Name = "TipsyText" Text= "{Binding Sentence}" Margin="-1,-10" TextColor="White" FontAttributes="Bold" FontFamily="Fjalla One" VerticalOptions="Start" HorizontalOptions="Start" FontSize="Large" MaxLines="9"/>
-                     <Label x:Name="Source" Text="-Quelle" TextColor="White" FontAttributes="Bold" FontFamily="Fjalla One" FontSize="Large"  VerticalOptions="End" HorizontalOptions="End" />
-                    </StackLayout>
-                </Frame>
-                
-             </Frame>
-            
-             <ImageButton
-                    
-                    x:Name="Shuffle"
-                    HeightRequest="37"
-                    Source="shuffle_button.png"
-                    Pressed="Shuffle_OnClicked"
-                    HorizontalOptions="End"
-                    Margin="0,0,24,0" />
-             
-        </StackLayout>
-  
+                        <StackLayout Grid.Column="1">
 
 
-    <StackLayout Grid.Row="3" Spacing="0" >
+
+                            <Frame
+                                HeightRequest="{Binding FrameHeight}"
+                                WidthRequest="{Binding FrameWidth}"
+                                CornerRadius="8"
+                                BackgroundColor="#262424">
+
+                                <StackLayout>
+                                    <Label x:Name = "TipsyText"
+                                           Text= "{Binding Sentence}"
+                                           TextColor="White"
+                                           FontAttributes="Bold"
+                                           FontFamily="fjallaOne"
+                                           VerticalOptions="Start"
+                                           HorizontalOptions="Start"
+                                           FontSize="20"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="45*"/>
+                            <ColumnDefinition Width="45*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="1">
+                            <Button Text="{Binding ModeButtonText}"
+                                    FontFamily="fjallaOne"
+                                    CornerRadius="8"
+                                    FontSize="20"
+                                    BackgroundColor="#262424"
+                                    TextColor="#FFF"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    HeightRequest="{Binding SecondRowHeight}"
+                                    WidthRequest="{Binding ModeButtonWidth}"
+                                    Clicked="ChangeMode_OnClicked"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="2">
+                            <ImageButton x:Name="Shuffle"
+                                         BackgroundColor="Black"
+                                         HeightRequest="{Binding SecondRowHeight}"
+                                         Source="shuffle_button.png"
+                                         Pressed="Shuffle_OnClicked"
+                                         HorizontalOptions="End"
+                                         VerticalOptions="Center"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Grid.Row="3">
        
-        <StackLayout>
-        <Label Text="HOLD THE BUTTON AND" FontSize="20" TextColor="#FFF" FontFamily="FjallaOne" VerticalOptions="End" HorizontalOptions="Center" />
-        <Label Text="READ THE TEXT OUT LOUD" FontSize="20" TextColor="#FFF" FontFamily="FjallaOne" VerticalOptions="End" HorizontalOptions="Center"/>
-        </StackLayout>
-        <ImageButton x:Name="recordingButton" Source="record_button.png" Pressed="OnButtonPressed"
-            Released="OnButtonReleased" HeightRequest="164" BackgroundColor="black" VerticalOptions="End" Margin="0,0,0,10"/>
-        </StackLayout>
-   </Grid>
+                    <StackLayout>
+                        <Label Text="HOLD THE BUTTON AND" FontSize="20" TextColor="#FFF" FontFamily="fjallaOne" VerticalOptions="End" HorizontalOptions="Center" />
+                        <Label Text="READ THE TEXT OUT LOUD" FontSize="20" TextColor="#FFF" FontFamily="fjallaOne" VerticalOptions="End" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <ImageButton x:Name="recordingButton" Source="record_button.png" Pressed="OnButtonPressed"
+                        Released="OnButtonReleased" HeightRequest="{Binding RecordingButtonHeight}" BackgroundColor="black" VerticalOptions="End"/>
+                </StackLayout>
+            </Grid>
 
 
-   </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

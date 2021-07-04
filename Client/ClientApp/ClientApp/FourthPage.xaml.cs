@@ -30,9 +30,9 @@ namespace ClientApp
         public FourthPage(int levelOfDrunkenness)
         {
             elementSizeService = new ElementSizeService();
-            FrameHeight = elementSizeService.calculateElementHeight(0.65);
+            FrameHeight = elementSizeService.calculateElementHeight(0.60);
             FrameWidth = elementSizeService.calculateElementWidth(0.9);
-            LevelOfDrunkennessImageHeight = elementSizeService.calculateElementHeight(0.4);
+            LevelOfDrunkennessImageHeight = elementSizeService.calculateElementHeight(0.35);
             LevelOfDrunkennessImageWidth = elementSizeService.calculateElementWidth(0.9);
             HomeButtonHeight = elementSizeService.calculateElementHeight(0.125);
             HomeButtonWidth = elementSizeService.calculateElementWidth(0.9);

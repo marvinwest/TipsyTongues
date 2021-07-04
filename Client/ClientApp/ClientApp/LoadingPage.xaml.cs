@@ -13,14 +13,10 @@ namespace ClientApp
 
     public partial class LoadingPage : ContentPage
     {
-        private ElementSizeService elementSizeService;
 
         public LoadingPage()
         {
             InitializeComponent();
-            
-            double animationHeight = animationView.Height;
-            Console.WriteLine(animationHeight);
             NavigationPage.SetHasNavigationBar(this, false);
         }
     }

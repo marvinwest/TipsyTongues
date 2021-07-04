@@ -4,36 +4,61 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
-using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics;
 using Plugin.AudioRecorder;
 using Plugin.Permissions;
 
+//{ "Wrap rage, also called package rage, is the common name for heightened levels of anger and frustration resulting from the inability to open packaging", "You also took the fine jewelry I gave you, the jewelry made of my gold and silver, and you made for yourself ", "Bonsai Kitten was a hoax website that claimed to provide instructions on how to raise a kitten in a jar, so as to mold the bones of the kitten into the shape of the jar " };
 namespace ClientApp
 {
     public partial class SecondPage : ContentPage
     {
-        private static Timer recordingTimer;
 
+        private static Timer recordingTimer;
         private readonly AudioRecorderService AudioRecorderService;
 
-        private String[] sentences = { "Wrap rage, also called package rage, is the common name for heightened levels of anger and frustration resulting from the inability to open packaging", "You also took the fine jewelry I gave you, the jewelry made of my gold and silver, and you made for yourself ", "Bonsai Kitten was a hoax website that claimed to provide instructions on how to raise a kitten in a jar, so as to mold the bones of the kitten into the shape of the jar " };
+        private String[] hardModeSentences = {
+            "Mister Tongue Twister tried to train his tongue to twist and turn and twit and twat to learn the letter T",
+            "I am not the fig plucker nor the fig pluckers son but I will pluck figs till the fig plucker comes"};
+        private String[] softModeSentences = {
+            "A toast to those who wish me well and all the rest can go to hell",
+            "Here is to doing and drinking not sitting and thinking",
+            "Drinks are on the house so someone get a ladder"};
+        private String[] sentences;
         private String sentence;
-        public String Sentence
-        {
-            get { return sentence; }
-            set
-            {
-                sentence = value;
-                OnPropertyChanged("Sentence");
-            }
-        }
+
+        private String modeButtonText;
+
+        private bool isHardMode;
+
+        private ElementSizeService elementSizeService;
+
+        private Double frameHeight;
+        private Double frameWidth;
+
+        private Double secondRowHeight;
+        private Double modeButtonWidth;
+        private Double shuffleButtonWidth;
+
+        private Double recordingButtonHeight;
 
         public SecondPage()
         {
             AudioRecorderService = new AudioRecorderService();
+            elementSizeService = new ElementSizeService();
+            Sentences = softModeSentences;
+            modeButtonText = "Hard";
+            isHardMode = false;
             RandomizeSentence();
+
+            FrameHeight = elementSizeService.calculateElementHeight(0.5);
+            FrameWidth = elementSizeService.calculateElementWidth(0.9);
+
+            secondRowHeight = elementSizeService.calculateElementHeight(0.075);
+            ModeButtonWidth = elementSizeService.calculateElementWidth(0.2);
+
+            RecordingButtonHeight = elementSizeService.calculateElementHeight(0.2);
             BindingContext = this;
             InitializeComponent();
   
@@ -65,6 +90,28 @@ namespace ClientApp
             Navigation.RemovePage(this);
         }
 
+        void Shuffle_OnClicked(object sender, EventArgs e)
+        {
+            RandomizeSentence();
+        }
+
+        void ChangeMode_OnClicked(object sender, EventArgs e)
+        {
+            if (isHardMode)
+            {
+                isHardMode = false;
+                Sentences = softModeSentences;
+                ModeButtonText = "Hard";
+                RandomizeSentence();
+            }
+            else
+            {
+                isHardMode = true;
+                Sentences = hardModeSentences;
+                ModeButtonText = "Soft";
+                RandomizeSentence();
+            }
+        }
 
         private void RandomizeSentence()
         {
@@ -73,9 +120,71 @@ namespace ClientApp
             Sentence = sentences[index];
         }
 
-        void Shuffle_OnClicked(object sender, EventArgs e)
+
+        public String Sentence
         {
-            RandomizeSentence();
+            get { return sentence; }
+            set
+            {
+                sentence = value;
+                OnPropertyChanged("Sentence");
+            }
+        }
+
+        public String[] Sentences
+        {
+            get { return sentences; }
+            set
+            {
+                sentences = value;
+                OnPropertyChanged("Sentences");
+            }
+        }
+
+        public String ModeButtonText
+        {
+            get { return modeButtonText; }
+            set 
+            {
+                modeButtonText = value;
+                OnPropertyChanged("ModeButtonText");
+            }
+        }
+
+        public Double FrameHeight
+        {
+            get { return frameHeight; }
+            set { frameHeight = value; }
+        }
+
+        public Double FrameWidth
+        {
+            get { return frameWidth; }
+            set { frameWidth = value; }
+        }
+
+        public Double SecondRowHeight
+        {
+            get { return secondRowHeight; }
+            set { secondRowHeight = value; }
+        }
+
+        public Double ModeButtonWidth
+        {
+            get { return modeButtonWidth; }
+            set { modeButtonWidth = value; }
+        }
+
+        public Double ShuffleButtonWidth
+        {
+            get { return shuffleButtonWidth; }
+            set { shuffleButtonWidth = value; }
+        }
+
+        public Double RecordingButtonHeight
+        {
+            get { return recordingButtonHeight; }
+            set { recordingButtonHeight = value; }
         }
 
     }
