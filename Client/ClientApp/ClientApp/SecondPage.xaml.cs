@@ -19,12 +19,15 @@ namespace ClientApp
         private readonly AudioRecorderService AudioRecorderService;
 
         private String[] hardModeSentences = {
-            "Mister Tongue Twister tried to train his tongue to twist and turn and twit and twat to learn the letter T",
-            "I am not the fig plucker nor the fig pluckers son but I will pluck figs till the fig plucker comes"};
+            "'Mister Tongue Twister tried to train his tongue to twist and turn and twit and twat to learn the letter T'",
+            "'I am not the fig plucker nor the fig pluckers son but I will pluck figs till the fig plucker comes'"};
         private String[] softModeSentences = {
-            "A toast to those who wish me well and all the rest can go to hell",
-            "Here is to doing and drinking not sitting and thinking",
-            "Drinks are on the house so someone get a ladder"};
+            "'A toast to those who wish me well and all the rest can go to hell'",
+            "'Here is to doing and drinking not sitting and thinking'",
+            "'Drinks are on the house so someone get a ladder'",
+            "'Nothing uses up alcohol faster than political argument.'",
+            "'Cheap booze is a false economy.'",
+            "'There are worse ways to die than warm and drunk.'"};
         private String[] sentences;
         private String sentence;
 
