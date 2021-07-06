@@ -20,15 +20,17 @@ namespace ClientApp
         private static String AUTHORIZATION = "12345678";
 
         private readonly AudioPlayer audioPlayer;
+        private AudioStreamDetails audioStreamDetails;
 
         private String audioFilePath;
         private String sentence;
 
-        public ThirdPage(String audioFilePath, String sentence)
+        public ThirdPage(String audioFilePath, String sentence, AudioStreamDetails audioStreamDetails)
         {
             audioPlayer = new AudioPlayer();
             this.audioFilePath = audioFilePath;
             this.sentence = sentence;
+            this.audioStreamDetails = audioStreamDetails;
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
@@ -98,6 +100,16 @@ namespace ClientApp
             content.Add(sentenceContent, "sentence");
             StringContent languageCodeContent = new StringContent(LANGUAGE_CODE);
             content.Add(languageCodeContent, "languageCode");
+
+            // Build content from given AudioStreamDetails
+            // Adds it to the payload
+            StringContent audioChannelCountContent = new StringContent(audioStreamDetails.ChannelCount.ToString());
+            content.Add(audioChannelCountContent, "audioChannelCount");
+            int bytesPerSample = audioStreamDetails.BitsPerSample / 8;
+            StringContent bytesPerSampleContent = new StringContent(bytesPerSample.ToString());
+            content.Add(bytesPerSampleContent, "audioBytesPerSample");
+            StringContent sampleRateContent = new StringContent(audioStreamDetails.SampleRate.ToString());
+            content.Add(sampleRateContent, "audioSampleRate");
 
             // Builds HTTPClient
             // Forwards the PostRequest with content-payload to backend
