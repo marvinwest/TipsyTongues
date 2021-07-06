@@ -16,7 +16,7 @@ namespace ClientApp
     {
 
         private static Timer recordingTimer;
-        private readonly AudioRecorderService AudioRecorderService;
+        private AudioRecorderService audioRecorderService;
 
         private String[] hardModeSentences = {
             "'Mister Tongue Twister tried to train his tongue to twist and turn and twit and twat to learn the letter T'",
@@ -48,7 +48,8 @@ namespace ClientApp
 
         public SecondPage()
         {
-            AudioRecorderService = new AudioRecorderService();
+            audioRecorderService = new AudioRecorderService();
+
             elementSizeService = new ElementSizeService();
             Sentences = softModeSentences;
             modeButtonText = "Hard";
@@ -75,7 +76,11 @@ namespace ClientApp
             recordingTimer = new Timer(14999);
             recordingTimer.Elapsed += new ElapsedEventHandler(OnRecordingTimeOut);
             recordingTimer.Enabled = true;
-            await AudioRecorderService.StartRecording();
+            await audioRecorderService.StartRecording();
+            // add following in Postrequest: 
+            //int BitsPerSample = audioRecorderService.AudioStreamDetails.BitsPerSample;
+            //int channelCount = audioRecorderService.AudioStreamDetails.ChannelCount;
+            //int SampleRate = audioRecorderService.AudioStreamDetails.SampleRate;
         }
 
         private async void OnRecordingTimeOut(object sender, ElapsedEventArgs e)
@@ -85,9 +90,9 @@ namespace ClientApp
 
         private async void OnButtonReleased (object sender, EventArgs e)
         {
-            await AudioRecorderService.StopRecording();
+            await audioRecorderService.StopRecording();
 
-            String audioFilePath = AudioRecorderService.GetAudioFilePath();
+            String audioFilePath = audioRecorderService.GetAudioFilePath();
 
             await Navigation.PushAsync(new ThirdPage(audioFilePath, sentence));
             Navigation.RemovePage(this);
