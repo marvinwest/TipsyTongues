@@ -107,19 +107,27 @@ namespace ClientApp
 
             // writes content of the HTTPResponse to console
             // TODO: add guard here, which loads errorpage, if statuscode not OK
-            Console.WriteLine(response.StatusCode.ToString());
-            
-            // Parse response to json-format
-            // Extract and forward levelOfDrunkenness to the next Page
-            var responseBody = await response.Content.ReadAsStringAsync();
-            var jsonObject = JObject.Parse(responseBody);
-            var levelOfDrunkenness = jsonObject.Value<int>("levelOfDrunkenness");
+            if (response.IsSuccessStatusCode)
+            {
+                // Parse response to json-format
+                // Extract and forward levelOfDrunkenness to the next Page
+                var responseBody = await response.Content.ReadAsStringAsync();
+                var jsonObject = JObject.Parse(responseBody);
+                var levelOfDrunkenness = jsonObject.Value<int>("levelOfDrunkenness");
 
-            // Forwards the returned levelOfDrunkenness to the Next Page
-            // Closes this Page and the loadingpage
-            await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
-            Navigation.RemovePage(loadingPage);
-            Navigation.RemovePage(this);
+                // Forwards the returned levelOfDrunkenness to the Next Page
+                // Closes this Page and the loadingpage
+                await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
+                Navigation.RemovePage(loadingPage);
+                Navigation.RemovePage(this);
+            }
+            else
+            {
+                await Navigation.PushAsync(new ErrorPage("Service currently unavailable"));
+                Navigation.RemovePage(loadingPage);
+                Navigation.RemovePage(this);
+            }
+            
         }
 
     }
