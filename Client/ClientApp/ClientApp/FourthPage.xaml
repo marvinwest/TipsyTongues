@@ -24,6 +24,7 @@
                 <StackLayout Grid.Row="1"
                              Grid.Column="1">
                     <Label Text="YOUR RESULT"
+                           Margin="0,20,0,0"
                            FontFamily="fjallaOne"
                            FontSize="40"
                            FontAttributes="Bold"
@@ -58,7 +59,7 @@
 
                 <StackLayout Grid.Row="2"
                              Grid.Column="1">
-                    <Image Source="Rectangle_Results.png"
+                    <Image Source="frame.png"
                            HeightRequest="{Binding FrameHeight}"
                            WidthRequest="{Binding FrameWidth}"
                            VerticalOptions="Center"

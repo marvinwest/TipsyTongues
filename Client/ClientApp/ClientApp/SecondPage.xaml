@@ -30,7 +30,6 @@
 
 
                             <Frame
-                                Margin="0,30,0,0"
                                 HeightRequest="{Binding FrameHeight}"
                                 WidthRequest="{Binding FrameWidth}"
                                 CornerRadius="8"
@@ -44,7 +43,7 @@
                                            FontFamily="fjallaOne"
                                            VerticalOptions="Start"
                                            HorizontalOptions="Start"
-                                           FontSize="20"/>
+                                           FontSize="30"/>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>

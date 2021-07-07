@@ -16,9 +16,17 @@
             </Frame>
            
 
-            <ImageButton Source="tryagain_button.png"
-               HeightRequest="60"
-               BackgroundColor="Black"
+            <Button
+                 Text="TRY AGAIN!"
+                 FontFamily="FjallaOne"
+                 CornerRadius="8"
+                 FontSize="20"
+                 BackgroundColor="#262424"
+                 TextColor="#FFF"
+                 HorizontalOptions="CenterAndExpand"
+                 WidthRequest="115"
+                 HeightRequest="60"
+         
                VerticalOptions="StartAndExpand"
                Clicked="MainPage_OnClicked"/>
         </StackLayout>
