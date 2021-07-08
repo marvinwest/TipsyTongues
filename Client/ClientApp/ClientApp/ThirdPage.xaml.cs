@@ -20,15 +20,17 @@ namespace ClientApp
         private static String AUTHORIZATION = "12345678";
 
         private readonly AudioPlayer audioPlayer;
+        private AudioStreamDetails audioStreamDetails;
 
         private String audioFilePath;
         private String sentence;
 
-        public ThirdPage(String audioFilePath, String sentence)
+        public ThirdPage(String audioFilePath, String sentence, AudioStreamDetails audioStreamDetails)
         {
             audioPlayer = new AudioPlayer();
             this.audioFilePath = audioFilePath;
             this.sentence = sentence;
+            this.audioStreamDetails = audioStreamDetails;
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
@@ -99,6 +101,16 @@ namespace ClientApp
             StringContent languageCodeContent = new StringContent(LANGUAGE_CODE);
             content.Add(languageCodeContent, "languageCode");
 
+            // Build content from given AudioStreamDetails
+            // Adds it to the payload
+            StringContent audioChannelCountContent = new StringContent(audioStreamDetails.ChannelCount.ToString());
+            content.Add(audioChannelCountContent, "audioChannelCount");
+            int bytesPerSample = audioStreamDetails.BitsPerSample / 8;
+            StringContent bytesPerSampleContent = new StringContent(bytesPerSample.ToString());
+            content.Add(bytesPerSampleContent, "audioBytesPerSample");
+            StringContent sampleRateContent = new StringContent(audioStreamDetails.SampleRate.ToString());
+            content.Add(sampleRateContent, "audioSampleRate");
+
             // Builds HTTPClient
             // Forwards the PostRequest with content-payload to backend
             HttpClient httpClient = new HttpClient();
@@ -107,19 +119,27 @@ namespace ClientApp
 
             // writes content of the HTTPResponse to console
             // TODO: add guard here, which loads errorpage, if statuscode not OK
-            Console.WriteLine(response.StatusCode.ToString());
-            
-            // Parse response to json-format
-            // Extract and forward levelOfDrunkenness to the next Page
-            var responseBody = await response.Content.ReadAsStringAsync();
-            var jsonObject = JObject.Parse(responseBody);
-            var levelOfDrunkenness = jsonObject.Value<int>("levelOfDrunkenness");
+            if (response.IsSuccessStatusCode)
+            {
+                // Parse response to json-format
+                // Extract and forward levelOfDrunkenness to the next Page
+                var responseBody = await response.Content.ReadAsStringAsync();
+                var jsonObject = JObject.Parse(responseBody);
+                var levelOfDrunkenness = jsonObject.Value<int>("levelOfDrunkenness");
 
-            // Forwards the returned levelOfDrunkenness to the Next Page
-            // Closes this Page and the loadingpage
-            await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
-            Navigation.RemovePage(loadingPage);
-            Navigation.RemovePage(this);
+                // Forwards the returned levelOfDrunkenness to the Next Page
+                // Closes this Page and the loadingpage
+                await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
+                Navigation.RemovePage(loadingPage);
+                Navigation.RemovePage(this);
+            }
+            else
+            {
+                await Navigation.PushAsync(new ErrorPage("Service currently unavailable"));
+                Navigation.RemovePage(loadingPage);
+                Navigation.RemovePage(this);
+            }
+            
         }
 
     }

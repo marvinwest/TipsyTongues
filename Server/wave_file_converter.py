@@ -1,9 +1,13 @@
 import wave
 
-def convert_to_wave_and_save(filename, byte_file):
+def convert_to_wave_and_save(filename,
+	byte_file,
+	channel_count,
+	bytes_per_sample,
+	samplerate):
 	wave_file = wave.open(filename, "wb")
-	wave_file.setnchannels(2)
-	wave_file.setsampwidth(2)
-	wave_file.setframerate(44100)
+	wave_file.setnchannels(channel_count)
+	wave_file.setsampwidth(bytes_per_sample)
+	wave_file.setframerate(samplerate)
 	wave_file.writeframesraw(byte_file.read())
 	wave_file.close()

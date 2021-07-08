@@ -55,6 +55,9 @@ components:
       required:
         - languageCode
         - sentence
+        - audioChannelCount
+        - audioBytesPerSample
+        - audioSampleRate
         - audioFile
       properties:
         languageCode:
@@ -63,6 +66,15 @@ components:
         sentence:
           type: string
           description: Sentence the user has to read
+        audioChannelCount:
+          type: string
+          description: Channel count of audioFile
+        audioBytesPerSample:
+          type: string
+          description: Bytes per Sample of audioFile
+        audioSampleRate:
+          type: string
+          description: SampleRate of the audioFile
         audioFile:
           type: string
           format: binary

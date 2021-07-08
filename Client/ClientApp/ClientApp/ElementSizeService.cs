@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 using Xamarin.Essentials;
 
@@ -10,6 +11,8 @@ namespace ClientApp
     {
         private Double screenHeight;
         private Double screenWidth;
+
+        
 
         public ElementSizeService()
         {
