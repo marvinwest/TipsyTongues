@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientApp.FourthPage">
+             x:Class="ClientApp.FourthPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             Title="Safe Area"
+             ios:Page.UseSafeArea="true"
+             BackgroundColor="Black">
+
     <ContentPage.Content FourthPage.HasNavigationBar="False">
 
         <StackLayout BackgroundColor="Black">
@@ -24,7 +29,6 @@
                 <StackLayout Grid.Row="1"
                              Grid.Column="1">
                     <Label Text="YOUR RESULT"
-                           Margin="0,20,0,0"
                            FontFamily="fjallaOne"
                            FontSize="40"
                            FontAttributes="Bold"

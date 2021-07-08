@@ -86,12 +86,6 @@
     <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\ShuffleButton%400,5x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\ShuffleButton%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\ShuffleButton%402x.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -284,6 +278,12 @@
     <ImageAsset Include="Resources\Assets.xcassets\home_button.png.imageset\home_button%401x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button%400,5x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\ShuffleButton%401x-1.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\shuffle_button.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -317,5 +317,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Assets.xcassets\play_button.png.imageset\" />
   </ItemGroup>
 </Project>

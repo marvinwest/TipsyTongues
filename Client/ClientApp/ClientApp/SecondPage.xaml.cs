@@ -61,6 +61,7 @@ namespace ClientApp
 
             secondRowHeight = elementSizeService.calculateElementHeight(0.075);
             ModeButtonWidth = elementSizeService.calculateElementWidth(0.2);
+            ShuffleButtonWidth = elementSizeService.calculateElementWidth(0.15);
 
             RecordingButtonHeight = elementSizeService.calculateElementHeight(0.2);
             BindingContext = this;

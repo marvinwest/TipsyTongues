@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientApp.ThirdPage">
+             x:Class="ClientApp.ThirdPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             Title="Safe Area"
+             ios:Page.UseSafeArea="true"
+             BackgroundColor="Black">
 
     <ContentPage.Content>
 
@@ -30,7 +34,7 @@
                  <Label  Text= "CLICK HERE TO LISTEN TO YOUR" FontSize="24" TextColor="#FFF" FontFamily="FjallaOne" HorizontalOptions="Center" />
                  <Label Text="RECORDING" FontSize="24" TextColor="#FFF" FontFamily="FjallaOne" HorizontalOptions="Center"/>
                  </StackLayout>
-                 <ImageButton Grid.Row="3" Source="record_button.png" BackgroundColor="black" HeightRequest="150" Clicked="PlayRecording"/>
+                 <ImageButton Grid.Row="3" Source="play_button.png" BackgroundColor="black" HeightRequest="150" Clicked="PlayRecording"/>
 
                 
                  </Grid>

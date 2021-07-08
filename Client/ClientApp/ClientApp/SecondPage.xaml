@@ -4,7 +4,12 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="ClientApp.SecondPage">
+    x:Class="ClientApp.SecondPage"
+     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             Title="Safe Area"
+             ios:Page.UseSafeArea="true"
+             BackgroundColor="Black">
+
     <ContentPage.Content >
         <StackLayout BackgroundColor="Black">
             <Grid x:Name="mainGrid">
@@ -62,8 +67,10 @@
                                     FontFamily="fjallaOne"
                                     CornerRadius="8"
                                     FontSize="20"
-                                    BackgroundColor="#262424"
-                                    TextColor="#FFF"
+                                    BorderColor="#FFFF8D"
+                                    BorderWidth="2"
+                                    BackgroundColor="Black"
+                                    TextColor="#FFFF8D"
                                     HorizontalOptions="Start"
                                     VerticalOptions="Center"
                                     HeightRequest="{Binding SecondRowHeight}"
@@ -73,6 +80,7 @@
                         <StackLayout Grid.Column="2">
                             <ImageButton x:Name="Shuffle"
                                          BackgroundColor="Black"
+                                         WidthRequest="{Binding ShuffleButtonWidth}"
                                          HeightRequest="{Binding SecondRowHeight}"
                                          Source="shuffle_button.png"
                                          Pressed="Shuffle_OnClicked"

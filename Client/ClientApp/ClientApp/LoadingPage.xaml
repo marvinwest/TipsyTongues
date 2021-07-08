@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
-             x:Class="ClientApp.LoadingPage">
+             x:Class="ClientApp.LoadingPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             Title="Safe Area"
+             ios:Page.UseSafeArea="true"
+             BackgroundColor="Black">
+
     <ContentPage.Content LoadingPage.HasNavigationBar="False">
         <StackLayout BackgroundColor="Black">
 
