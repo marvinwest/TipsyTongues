@@ -4,15 +4,14 @@
              x:Class="ClientApp.MainPage">
     
 
-    <StackLayout >
+   
 
-    
-     <ImageButton Source="Disclaimer.png"
+     <ImageButton Source ="Disclaimer.png"
                 Clicked= "NavigateButton_OnClicked" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill"/>
           
-             
+     
 
 
-    </StackLayout>
+  
 
 </ContentPage>

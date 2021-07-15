@@ -104,12 +104,6 @@
       <Generator>
       </Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\Disclaimer.png">
-      <SubType>
-      </SubType>
-      <Generator>
-      </Generator>
-    </AndroidResource>
     <AndroidResource Include="Resources\drawable\record_button.png">
       <SubType>
       </SubType>
@@ -189,6 +183,14 @@
       </Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\play_button.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\pattern.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Disclaimer.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

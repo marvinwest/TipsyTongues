@@ -254,15 +254,6 @@
     <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\disclaimer%400,5x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\disclaimer%401x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\disclaimer%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Resources\Assets.xcassets\Image-3.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -278,12 +269,15 @@
     <ImageAsset Include="Resources\Assets.xcassets\home_button.png.imageset\home_button%401x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button%400,5x.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button%401x.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button.png" />
     <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\ShuffleButton%401x-1.png" />
     <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\shuffle_button.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button%401x.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button-1.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer1.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer2.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer2-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -320,5 +314,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Assets.xcassets\play_button.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\play_button.png.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\pattern.png.imageset\" />
   </ItemGroup>
 </Project>
