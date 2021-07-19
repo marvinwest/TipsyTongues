@@ -42,6 +42,7 @@ namespace ClientApp
 
         private Double secondRowHeight;
         private Double modeButtonWidth;
+        private Double modeButtonHeight;
         private Double shuffleButtonWidth;
 
         private Double recordingButtonHeight;
@@ -60,7 +61,8 @@ namespace ClientApp
             FrameWidth = elementSizeService.calculateElementWidth(0.9);
 
             secondRowHeight = elementSizeService.calculateElementHeight(0.075);
-            ModeButtonWidth = elementSizeService.calculateElementWidth(0.2);
+            modeButtonWidth = elementSizeService.calculateElementWidth(0.2);
+            modeButtonHeight = elementSizeService.calculateElementHeight(0.05);
             ShuffleButtonWidth = elementSizeService.calculateElementWidth(0.15);
 
             RecordingButtonHeight = elementSizeService.calculateElementHeight(0.2);
@@ -191,6 +193,12 @@ namespace ClientApp
         {
             get { return recordingButtonHeight; }
             set { recordingButtonHeight = value; }
+        }
+
+        public Double ModeButtonHeight
+        {
+            get { return modeButtonHeight; }
+            set { modeButtonHeight = value; }
         }
 
     }

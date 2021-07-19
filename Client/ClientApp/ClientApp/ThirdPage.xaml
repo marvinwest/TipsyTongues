@@ -31,8 +31,7 @@
                  </Grid.RowDefinitions>
 
                  <StackLayout Grid.Row="2">
-                 <Label  Text= "CLICK HERE TO LISTEN TO YOUR" FontSize="24" TextColor="#FFF" FontFamily="FjallaOne" HorizontalOptions="Center" />
-                 <Label Text="RECORDING" FontSize="24" TextColor="#FFF" FontFamily="FjallaOne" HorizontalOptions="Center"/>
+                 <Label  Text= "CLICK HERE TO LISTEN TO YOUR&#x0a;RECORDING" FontSize="24" TextColor="#FFF" FontFamily="FjallaOne" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
                  </StackLayout>
                  <ImageButton Grid.Row="3" Source="play_button.png" BackgroundColor="black" HeightRequest="150" Clicked="PlayRecording"/>
 
