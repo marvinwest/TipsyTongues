@@ -27,7 +27,9 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>Apple Development: julebuschmann.jb@googlemail.com (KHVAJFX9TY)</CodesignKey>
+    <CodesignProvision>iOS Team Provisioning Profile: com.companyname.TipsyTongues</CodesignProvision>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -188,12 +190,6 @@
     <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%400,5x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%401xpng.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%402x.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -278,6 +274,8 @@
     <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer1.png" />
     <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer2.png" />
     <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer2-1.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%402x-1.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%402x-2.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

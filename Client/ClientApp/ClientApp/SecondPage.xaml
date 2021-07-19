@@ -72,8 +72,8 @@
                                     BackgroundColor="Black"
                                     TextColor="#FFFF8D"
                                     HorizontalOptions="Start"
-                                    VerticalOptions="Center"
-                                    HeightRequest="{Binding SecondRowHeight}"
+                                    VerticalOptions="CenterAndExpand"
+                                    HeightRequest="{Binding ModeButtonHeight}"
                                     WidthRequest="{Binding ModeButtonWidth}"
                                     Clicked="ChangeMode_OnClicked"/>
                         </StackLayout>
@@ -91,10 +91,7 @@
                 </StackLayout>
                 <StackLayout Grid.Row="3">
        
-                    <StackLayout>
-                        <Label Text="HOLD THE BUTTON AND" FontSize="20" TextColor="#FFF" FontFamily="fjallaOne" VerticalOptions="End" HorizontalOptions="Center" />
-                        <Label Text="READ THE TEXT OUT LOUD" FontSize="20" TextColor="#FFF" FontFamily="fjallaOne" VerticalOptions="End" HorizontalOptions="Center"/>
-                    </StackLayout>
+                    <Label Text="HOLD THE BUTTON AND&#x0a;READ THE TEXT OUT LOUD" FontSize="20" TextColor="#FFF" FontFamily="fjallaOne" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
                     <ImageButton x:Name="recordingButton" Source="record_button.png" Pressed="OnButtonPressed"
                         Released="OnButtonReleased" HeightRequest="{Binding RecordingButtonHeight}" BackgroundColor="black" VerticalOptions="End"/>
                 </StackLayout>

@@ -52,7 +52,7 @@ namespace ClientApp
 
             elementSizeService = new ElementSizeService();
             Sentences = softModeSentences;
-            modeButtonText = "Hard";
+            modeButtonText = "EASY";
             isHardMode = false;
             RandomizeSentence();
 
@@ -107,14 +107,14 @@ namespace ClientApp
             {
                 isHardMode = false;
                 Sentences = softModeSentences;
-                ModeButtonText = "Hard";
+                ModeButtonText = "EASY";
                 RandomizeSentence();
             }
             else
             {
                 isHardMode = true;
                 Sentences = hardModeSentences;
-                ModeButtonText = "Soft";
+                ModeButtonText = "HARD";
                 RandomizeSentence();
             }
         }

@@ -4,14 +4,12 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>TipsyTongues</string>
-	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleName</key>
 	<string>ClientApp</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>14.5</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need this permission in order to analyse your drunkenness</string>
 	<key>UIDeviceFamily</key>
@@ -34,5 +32,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.companyname.TipsyTongues</string>
 </dict>
 </plist>
