@@ -41,21 +41,31 @@ def post_recognition():
 	if(authorization != keys.authorization_key):
 		return "Invalid Request", status.HTTP_400_BAD_REQUEST
 
-	# For two or more requests at the same time, we need to randomize
-	# the filename, so every file has a unique name
-	# otherwise a PermissionError occurs
-	filename_randomizer = random.randint(0, 9999999)
-	filename = "pronunciation_file" + "_" + str(filename_randomizer) + ".wav"
-	converter.convert_to_wave_and_save(filename, audio_file, audio_channel_count, audio_bytes_per_sample, audio_samplerate)
+	filename = build_audiofile(audio_file,
+		audio_channel_count,
+		audio_bytes_per_sample,
+		audio_samplerate)
 
-	recognition_result = recognizer.recognize_pronunciation(language_code, sentence, filename)
+	recognition_result = recognizer.recognize_pronunciation(language_code,
+		sentence,
+		filename)
+
 	level_of_drunkenness = calculator.calculate_drunkenness(recognition_result)
 
 	os.remove(filename)
 
 	return {"levelOfDrunkenness" : level_of_drunkenness}
 
-# app.run(<debug = True>) only for testpurposes
+# For two or more requests at the same time, we need to randomize
+# the filename, so every file has a unique name
+# otherwise a PermissionError occurs
+def build_audiofile(audio_file, audio_channel_count, audio_bytes_per_sample, audio_samplerate):
+	filename_randomizer = random.randint(0, 9999999)
+	filename = "pronunciation_file" + "_" + str(filename_randomizer) + ".wav"
+	converter.convert_to_wave_and_save(filename, audio_file, audio_channel_count, audio_bytes_per_sample, audio_samplerate)
+	return filename
+
+# app.run(debug = True) only for testpurposes
 # Do not use it in deployment
 if __name__ == "__main__":
 	app.run(debug = True)

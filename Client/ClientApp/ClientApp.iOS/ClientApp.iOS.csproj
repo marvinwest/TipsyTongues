@@ -265,17 +265,39 @@
     <ImageAsset Include="Resources\Assets.xcassets\home_button.png.imageset\home_button%401x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\ShuffleButton%401x-1.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\shuffle_button.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button%401x.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button-1.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer1.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer2.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer2-1.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%402x-1.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%402x-2.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\ShuffleButton%401x-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\shuffle_button.png.imageset\shuffle_button.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\play_button.png.imageset\play_button-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\Disclaimer.png.imageset\Disclaimer2-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%402x-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.png.imageset\LaunchScreen%402x-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

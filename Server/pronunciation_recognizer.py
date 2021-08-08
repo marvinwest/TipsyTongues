@@ -20,14 +20,17 @@ def recognize_pronunciation(language_code, sentence, filename):
 	speech_config = __build_speech_config()
 	audio_config = __build_audio_config(filename)
 	language_config = __build_language_config(language_code)
-	speech_recognizer = __build_speech_recognizer(speech_config, language_config, audio_config)
+	speech_recognizer = __build_speech_recognizer(speech_config,
+		language_config,
+		audio_config)
 	pronunciation_assessment_config = __build_pronunciation_assesment_config(sentence)
 	pronunciation_assessment_config.apply_to(speech_recognizer)
 
 	response = speech_recognizer.recognize_once()
 
 	try:
-		result = __build_pronunciation_result(speechsdk.PronunciationAssessmentResult(response))
+		result = __build_pronunciation_result(
+			speechsdk.PronunciationAssessmentResult(response))
 	except TypeError:
 		# happens if nothing of the file could be recognized
 		result = PronunciationResult(0.0, 0.0, 0.0, 0.0)
