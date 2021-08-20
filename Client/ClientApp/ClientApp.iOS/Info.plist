@@ -33,6 +33,6 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.TipsyTongues</string>
+	<string>com.companyname.TipsyTongues.ClientApp</string>
 </dict>
 </plist>

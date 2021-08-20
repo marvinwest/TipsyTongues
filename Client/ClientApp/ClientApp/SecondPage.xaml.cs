@@ -62,7 +62,7 @@ namespace ClientApp
 
             secondRowHeight = elementSizeService.calculateElementHeight(0.075);
             modeButtonWidth = elementSizeService.calculateElementWidth(0.2);
-            modeButtonHeight = elementSizeService.calculateElementHeight(0.05);
+            modeButtonHeight = elementSizeService.calculateElementHeight(0.07);
             ShuffleButtonWidth = elementSizeService.calculateElementWidth(0.15);
 
             RecordingButtonHeight = elementSizeService.calculateElementHeight(0.2);
