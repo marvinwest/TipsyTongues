@@ -2,13 +2,16 @@
 An app, that guesses your alcohol level based on a voice recording.
 
 Design:
-- Design build in InVision Studios 
-- Dark Design, to be enjoyable at night
-- Disclaimer when app is started, button: please press to start 
-- Loading button: Beer getting poured into a glass, or animation with someone drinking a beer
-- Record button: Tongues schould be included
-- Different texts to read with the option to get a new text
-- Results: Maybe as some kind of scale
+- Prototype created in InVision Studios. Link to project: https://tabeagraszynski837873.invisionapp.com/prototype/Tipsy-Tongues-ckpfppisd0052vn01kvzsjlsz/play/5390a90f
+- Design choices: Dark Design, to be enjoyable at night; Disclaimer when app is started; Beer scheme --> yellow as primary color; Tongues scheme: --> pink as secondary color
+- Disclaimer: resembles color and waves of a beer getting poured in; warns user of drinking and driving
+- Record button: Tongue wrapped around a microphone. Illustration made in Adobe Illustrator.
+- Different sentences to read out loud, shuffle button to get a new text; Easy and hard mode; Hard mode with tongue twisters
+- Listening button: Headphones that resemble a tongue. Illustration made in Adobe Illustrator. 
+- Loading animation: Beer glass filling up. Animation made in Adobe AfterEffects, exported as lottiefile
+- Results: Results are shown in a Scale in the shape of a beer glass. The fuller the glass is, the more drunk is the user; Caption below that states the result; Home button to go back to the Disclaimer
+- Loading animation: https://lottiefiles.com/share/mjtwhdlq
+- 15 seconds circle animation for recording: https://lottiefiles.com/share/ftbiikqh (with button), https://lottiefiles.com/share/wusiein9 (without button)
 
 
 Front End:
