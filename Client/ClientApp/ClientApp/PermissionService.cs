@@ -9,52 +9,48 @@ namespace ClientApp
 {
     class PermissionService
     {
-        public static async Task<bool> checkOrGetPermissions()
+
+        public static async Task<bool> checkOrGetMicrophonePermission()
         {
-            // defines the Permissions the app needs
-            bool permissionsGranted = true;
-            var permissionsList = new List<Permission>()
+            var status = await CrossPermissions.Current.CheckPermissionStatusAsync<MicrophonePermission>();
+            if (status == PermissionStatus.Granted)
             {
-                Permission.Microphone,
-                Permission.Storage
-            };
-
-            // checks which permissions are already given
-            // Adds not given, but needed permissions to permissionsNeededList
-            var permissionsNeededList = new List<Permission>();
-            foreach (var permission in permissionsList)
-            {
-                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(permission);
-                if (status != PermissionStatus.Granted)
-                {
-                    permissionsNeededList.Add(permission);
-                }
+                return true;
             }
-
-            // Asks for Permission in PermissionsNeededList
-            // If all Permissions are given -> return true
-            // If not return false
-            var results = await CrossPermissions.Current.RequestPermissionsAsync(permissionsNeededList.ToArray());
-            foreach (var permission in permissionsNeededList)
+            else
             {
-                var status = PermissionStatus.Unknown;
-                if (results.ContainsKey(permission))
+                status = await CrossPermissions.Current.RequestPermissionAsync<MicrophonePermission>();
+                if (status == PermissionStatus.Granted)
                 {
-                    status = results[permission];
-                }
-                if (status == PermissionStatus.Granted || status == PermissionStatus.Unknown)
-                {
-                    permissionsGranted = true;
+                    return true;
                 }
                 else
                 {
-                    permissionsGranted = false;
-                    break;
+                    return false;
                 }
             }
-
-            return permissionsGranted;
         }
-    }
 
+        public static async Task<bool> checkOrGetStoragePermission()
+        {
+            var status = await CrossPermissions.Current.CheckPermissionStatusAsync<StoragePermission>();
+            if (status == PermissionStatus.Granted)
+            {
+                return true;
+            }
+            else
+            {
+                status = await CrossPermissions.Current.RequestPermissionAsync<StoragePermission>();
+                if (status == PermissionStatus.Granted)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+    }
 }

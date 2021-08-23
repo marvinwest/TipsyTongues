@@ -13,7 +13,6 @@ namespace ClientApp
     public partial class MainPage : ContentPage
     {
         
-
         public MainPage()
         {
             InitializeComponent();
@@ -21,12 +20,9 @@ namespace ClientApp
 
         }
 
-
-
-
         private async void NavigateButton_OnClicked(object sender, EventArgs e)
         {
-            if (await PermissionService.checkOrGetPermissions())
+            if (await PermissionService.checkOrGetMicrophonePermission() && await PermissionService.checkOrGetStoragePermission())
             {
                 await Navigation.PushAsync(new SecondPage());
                 Navigation.RemovePage(this);
