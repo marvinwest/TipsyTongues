@@ -31,7 +31,7 @@ def recognize_pronunciation(language_code, sentence, filename):
 	try:
 		result = __build_pronunciation_result(
 			speechsdk.PronunciationAssessmentResult(response))
-	except TypeError:
+	except AttributeError, TypeError:
 		# happens if nothing of the file could be recognized
 		result = PronunciationResult(0.0, 0.0, 0.0, 0.0)
 
