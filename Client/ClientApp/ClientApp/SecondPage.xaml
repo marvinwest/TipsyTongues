@@ -32,8 +32,6 @@
 
                         <StackLayout Grid.Column="1">
 
-
-
                             <Frame
                                 HeightRequest="{Binding FrameHeight}"
                                 WidthRequest="{Binding FrameWidth}"

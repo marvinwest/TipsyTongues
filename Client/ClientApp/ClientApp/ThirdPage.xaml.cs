@@ -25,12 +25,30 @@ namespace ClientApp
         private String audioFilePath;
         private String sentence;
 
+        private ElementSizeService elementSizeService;
+
+        private double playButtonHeight;
+        private double playButtonWidth;
+
+        private double menuButtonHeight;
+        private double menuButtonWidth;
+
         public ThirdPage(String audioFilePath, String sentence, AudioStreamDetails audioStreamDetails)
         {
             audioPlayer = new AudioPlayer();
             this.audioFilePath = audioFilePath;
             this.sentence = sentence;
             this.audioStreamDetails = audioStreamDetails;
+
+            elementSizeService = new ElementSizeService();
+
+            playButtonHeight = elementSizeService.calculateElementHeight(0.4);
+            playButtonWidth = elementSizeService.calculateElementWidth(0.4);
+
+            menuButtonHeight = elementSizeService.calculateElementHeight(0.1);
+            menuButtonWidth = elementSizeService.calculateElementWidth(0.4);
+
+            BindingContext = this;
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
@@ -79,7 +97,7 @@ namespace ClientApp
                 var fileByteArrayContent = new ByteArrayContent(fileByteArray);
                 content.Add(fileByteArrayContent, "audioFile", audioFilePath);
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 // If microphone didn´t record a sound, the fileByteArray can´t be build
                 // Therefore the user is forwarded to the errorpage
@@ -140,6 +158,30 @@ namespace ClientApp
                 Navigation.RemovePage(this);
             }
             
+        }
+
+        public Double PlayButtonWidth
+        {
+            get { return playButtonWidth; }
+            set { playButtonWidth = value; }
+        }
+
+        public Double PlayButtonHeight
+        {
+            get { return playButtonHeight; }
+            set { playButtonHeight = value; }
+        }
+
+        public Double MenuButtonWidth
+        {
+            get { return menuButtonWidth; }
+            set { menuButtonWidth = value; }
+        }
+
+        public Double MenuButtonHeight
+        {
+            get { return menuButtonHeight; }
+            set { menuButtonHeight = value; }
         }
 
     }

@@ -6,72 +6,86 @@
              Title="Safe Area"
              ios:Page.UseSafeArea="true"
              BackgroundColor="Black">
-
     <ContentPage.Content>
+        
+        <StackLayout BackgroundColor="Black">
+            <Grid x:Name="mainGrid">
 
-    
-    <Grid BackgroundColor="black" >
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-           
-        </Grid.RowDefinitions>
-
-        <StackLayout Spacing="50">
-            <StackLayout Grid.Row="1" Orientation="Vertical">
-                <Grid >
                 <Grid.RowDefinitions>
-                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                 </Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="18.5*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
 
-                 <StackLayout Grid.Row="2">
-                 <Label  Text= "CLICK HERE TO LISTEN TO YOUR&#x0a;RECORDING" FontSize="24" TextColor="#FFF" FontFamily="FjallaOne" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-                 </StackLayout>
-                 <ImageButton Grid.Row="3" Source="play_button.png" BackgroundColor="black" HeightRequest="150" Clicked="PlayRecording"/>
+                <StackLayout Grid.Row="1">
+                    <Label  Text= "CLICK HERE TO LISTEN TO YOUR&#x0a;RECORDING"
+                            FontSize="24"
+                            TextColor="#FFF"
+                            FontFamily="FjallaOne"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="End"/>
+                </StackLayout>
 
-                
-                 </Grid>
-            </StackLayout>
+                <StackLayout Grid.Row="2">
+                    <ImageButton x:Name="listeningButton"
+                                 Source="play_button.png"
+                                 BackgroundColor="black"
+                                 HeightRequest="{Binding PlayButtonHeight}"
+                                 WidthRequest="{Binding PlayButtonWidth}"
+                                 Clicked="PlayRecording"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"/>
+                </StackLayout>
 
-            <StackLayout Margin="0,60,0,0" Grid.Row="4" Orientation="Horizontal" HeightRequest="44">
-                <Button
-                 Text="TRY AGAIN!"
-                 FontFamily="FjallaOne"
-                 CornerRadius="8"
-                 FontSize="20"
-                 BackgroundColor="#262424"
-                 TextColor="#FFF"
-                 VerticalOptions="Start"
-                 HorizontalOptions="CenterAndExpand"
-                 Margin="53,0,0,0"
-                 HeightRequest="44"
-                 WidthRequest="115"
-                 Clicked="SecondPage_OnClicked"/>
+                <StackLayout Grid.Row="4">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="45*"/>
+                            <ColumnDefinition Width="45*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                    
 
-                 <Button
-                  Text="GO!"
-                  FontFamily="FjallaOne"
-                  CornerRadius="8"
-                  FontSize="20"
-                  TextColor="#FFF"
-                  Margin="0,0,53,0"
-                  VerticalOptions="Start"
-                  HorizontalOptions="CenterAndExpand"
-                  HeightRequest="44"
-                  WidthRequest="115"
-                  BackgroundColor="#262424"
-                  Clicked="PostToBackend_OnClicked"/>
-             </StackLayout>
-            </StackLayout>
-        
-    </Grid>
-    
-        
+                        <StackLayout Grid.Column="1">
+                            <Button Text="TRY AGAIN!"
+                                    FontFamily="FjallaOne"
+                                    CornerRadius="8"
+                                    FontSize="20"
+                                    BackgroundColor="#262424"
+                                    TextColor="#FFF"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"
+                                    HeightRequest="{Binding MenuButtonHeight}"
+                                    WidthRequest="{Binding MenuButtonWidth}"
+                                    Clicked="SecondPage_OnClicked"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="2">
+                            <Button Text="GO!"
+                                    FontFamily="FjallaOne"
+                                    CornerRadius="8"
+                                    FontSize="20"
+                                    BackgroundColor="#262424"
+                                    TextColor="#FFF"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"
+                                    HeightRequest="{Binding MenuButtonHeight}"
+                                    WidthRequest="{Binding MenuButtonWidth}"
+                                    Clicked="PostToBackend_OnClicked"/>
+                        </StackLayout>
+
+                    </Grid>
+
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
