@@ -40,7 +40,7 @@
 
                                 <StackLayout>
                                     <Label x:Name = "TipsyText"
-                                           Text= "{Binding ErrorMessageDisplay}"
+                                           Text= "{Binding Sentence}"
                                            TextColor="White"
                                            FontAttributes="Bold"
                                            FontFamily="fjallaOne"
