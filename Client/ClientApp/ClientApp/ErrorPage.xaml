@@ -10,30 +10,64 @@
     <ContentPage.Content ErrorPage.HasNavigationBar="False">
 
         <StackLayout BackgroundColor="Black">
-            <Frame Margin="24,28,24,0" VerticalOptions="CenterAndExpand" BackgroundColor ="#262424">
-                <Label Text="{Binding ErrorMessageDisplay}"
-                Margin="25,0,10,0"
-                FontSize="Large"
-                TextColor="White"
-                FontAttributes="Bold"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            </Frame>
-           
+            <Grid x:Name="mainGrid">
 
-            <Button
-                 Text="TRY AGAIN!"
-                 FontFamily="FjallaOne"
-                 CornerRadius="8"
-                 FontSize="20"
-                 BackgroundColor="#262424"
-                 TextColor="#FFF"
-                 HorizontalOptions="CenterAndExpand"
-                 WidthRequest="115"
-                 HeightRequest="60"
-         
-               VerticalOptions="StartAndExpand"
-               Clicked="MainPage_OnClicked"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="90*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="1">
+
+                            <Frame
+                                HeightRequest="{Binding FrameHeight}"
+                                WidthRequest="{Binding FrameWidth}"
+                                CornerRadius="8"
+                                BackgroundColor="#262424">
+
+                                <StackLayout>
+                                    <Label x:Name = "TipsyText"
+                                           Text= "{Binding ErrorMessageDisplay}"
+                                           TextColor="White"
+                                           FontAttributes="Bold"
+                                           FontFamily="fjallaOne"
+                                           VerticalOptions="Start"
+                                           HorizontalOptions="Start"
+                                           FontSize="Large"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3">
+                    <Button Text="TRY AGAIN!"
+                            FontFamily="FjallaOne"
+                            CornerRadius="8"
+                            FontSize="20"
+                            BackgroundColor="#262424"
+                            TextColor="#FFF"
+                            HorizontalOptions="Center"
+                            WidthRequest="{Binding MenuButtonWidth}"
+                            HeightRequest="{Binding MenuButtonHeight}"
+                            VerticalOptions="Center"
+                            Clicked="MainPage_OnClicked"/>
+                </StackLayout>
+
+            </Grid>
         </StackLayout>
+
     </ContentPage.Content>
+    
 </ContentPage>

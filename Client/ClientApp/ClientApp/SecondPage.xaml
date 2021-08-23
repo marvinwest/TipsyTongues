@@ -5,10 +5,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="ClientApp.SecondPage"
-     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             Title="Safe Area"
-             ios:Page.UseSafeArea="true"
-             BackgroundColor="Black">
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    Title="Safe Area"
+    ios:Page.UseSafeArea="true"
+    BackgroundColor="Black">
 
     <ContentPage.Content >
         <StackLayout BackgroundColor="Black">
@@ -40,7 +40,7 @@
 
                                 <StackLayout>
                                     <Label x:Name = "TipsyText"
-                                           Text= "{Binding Sentence}"
+                                           Text= "{Binding ErrorMessageDisplay}"
                                            TextColor="White"
                                            FontAttributes="Bold"
                                            FontFamily="fjallaOne"
