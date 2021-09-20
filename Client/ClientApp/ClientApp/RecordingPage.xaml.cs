@@ -148,12 +148,12 @@ namespace ClientApp
             String audioFilePath = audioRecorderService.GetAudioFilePath();
             AudioStreamDetails audioStreamDetails = audioRecorderService.AudioStreamDetails;
 
-            await Navigation.PushAsync(new ThirdPage(audioFilePath, sentence, audioStreamDetails));
+            await Navigation.PushAsync(new ListeningPage(audioFilePath, sentence, audioStreamDetails));
             Navigation.RemovePage(this);
         }
 
         /**
-         * On click on the button a new randomize sentence is shown.
+         * On click a new randomized sentence is shown.
          **/
         void Shuffle_OnClicked(object sender, EventArgs e)
         {
@@ -161,7 +161,7 @@ namespace ClientApp
         }
 
         /**
-         * On Click the difficulty mode is changed.
+         * On click the difficulty mode is changed.
          * isHardMode boolean is changed.
          * Sentences-array is changed.
          * ModeButtonText is changed.
@@ -196,6 +196,7 @@ namespace ClientApp
         }
 
         // Following are the properties for valuebinding in the XAML.
+
         public String Sentence
         {
             get { return sentence; }

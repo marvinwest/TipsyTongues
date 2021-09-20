@@ -1,16 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientApp.ThirdPage"
+             x:Class="ClientApp.ListeningPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              Title="Safe Area"
              ios:Page.UseSafeArea="true"
              BackgroundColor="Black">
     <ContentPage.Content>
-        
         <StackLayout BackgroundColor="Black">
             <Grid x:Name="mainGrid">
-
                 <Grid.RowDefinitions>
                     <RowDefinition Height="10*"/>
                     <RowDefinition Height="10*"/>
@@ -19,7 +17,6 @@
                     <RowDefinition Height="18.5*"/>
                     <RowDefinition Height="1.5*"/>
                 </Grid.RowDefinitions>
-
                 <StackLayout Grid.Row="1">
                     <Label  Text= "CLICK HERE TO LISTEN TO YOUR&#x0a;RECORDING"
                             FontSize="24"
@@ -30,7 +27,6 @@
                             HorizontalTextAlignment="Center"
                             VerticalTextAlignment="End"/>
                 </StackLayout>
-
                 <StackLayout Grid.Row="2">
                     <ImageButton x:Name="listeningButton"
                                  Source="play_button.png"
@@ -41,7 +37,6 @@
                                  HorizontalOptions="Center"
                                  VerticalOptions="Center"/>
                 </StackLayout>
-
                 <StackLayout Grid.Row="4">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -50,8 +45,6 @@
                             <ColumnDefinition Width="45*"/>
                             <ColumnDefinition Width="5*"/>
                         </Grid.ColumnDefinitions>
-                    
-
                         <StackLayout Grid.Column="1">
                             <Button Text="TRY AGAIN!"
                                     FontFamily="FjallaOne"
@@ -63,9 +56,8 @@
                                     HorizontalOptions="Center"
                                     HeightRequest="{Binding MenuButtonHeight}"
                                     WidthRequest="{Binding MenuButtonWidth}"
-                                    Clicked="SecondPage_OnClicked"/>
+                                    Clicked="RecordingPage_OnClicked"/>
                         </StackLayout>
-
                         <StackLayout Grid.Column="2">
                             <Button Text="GO!"
                                     FontFamily="FjallaOne"
@@ -79,13 +71,9 @@
                                     WidthRequest="{Binding MenuButtonWidth}"
                                     Clicked="PostToBackend_OnClicked"/>
                         </StackLayout>
-
                     </Grid>
-
                 </StackLayout>
-
             </Grid>
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>

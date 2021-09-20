@@ -14,7 +14,13 @@ using Xamarin.Forms;
 namespace ClientApp
 {
 
-    public partial class ThirdPage : ContentPage
+    /**
+     * ListeningPage:
+     * The user can listen to his recording by clicking the button in the middle of the page.
+     * By click on "Try again" the RecordingPage is loaded
+     * By click on "Go" languageCode, authorization, sentence, audiofile and the audiofiledetails are forwarded to the server.
+     **/
+    public partial class ListeningPage : ContentPage
     {
         private static String LANGUAGE_CODE = "en-US";
         private static String AUTHORIZATION = "12345678";
@@ -33,18 +39,23 @@ namespace ClientApp
         private double menuButtonHeight;
         private double menuButtonWidth;
 
-        public ThirdPage(String audioFilePath, String sentence, AudioStreamDetails audioStreamDetails)
+        /**
+         * On Initilization:
+         * Forwarded elements audioFilePath, sentence and audioStreamDetails are set.
+         * AudioPlayer and ElementSizeService are loaded.
+         * Width and Height of the shown elements are calculated.
+         **/
+        public ListeningPage(String audioFilePath, String sentence, AudioStreamDetails audioStreamDetails)
         {
-            audioPlayer = new AudioPlayer();
             this.audioFilePath = audioFilePath;
             this.sentence = sentence;
             this.audioStreamDetails = audioStreamDetails;
 
+            audioPlayer = new AudioPlayer();
             elementSizeService = new ElementSizeService();
 
             playButtonHeight = elementSizeService.calculateElementHeight(0.4);
             playButtonWidth = elementSizeService.calculateElementWidth(0.4);
-
             menuButtonHeight = elementSizeService.calculateElementHeight(0.1);
             menuButtonWidth = elementSizeService.calculateElementWidth(0.4);
 
@@ -53,6 +64,9 @@ namespace ClientApp
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
+        /**
+         * On click the recorded audiofile is played.
+         **/
         async void PlayRecording(object sender, EventArgs e)
         {
             try
@@ -67,23 +81,29 @@ namespace ClientApp
             
         }
 
-        //TODO: use Navigation.RemovePage on every change of pages!!!
-        private async void SecondPage_OnClicked(object sender, EventArgs e)
+        /**
+         * On click playing of the audiofile is stopped and the RecordingPage is loaded.
+         **/
+        private async void RecordingPage_OnClicked(object sender, EventArgs e)
         {
             audioPlayer.Pause();
             await Navigation.PushAsync(new RecordingPage());
             Navigation.RemovePage(this);
         }
 
-        //TODO:
-        //  - got to errorpage is statuscode else than 200 (OK)
-        //  - Add Proper Exceptionhandling
-        //  - Add languageCode to http-post (see api.yaml)
-
-        //Lottie:
-        //Placeholder-File = Mercury_navigation_refresh.json TODO: replace by actual animation, wait for design
-        //  - Android: Add to Assets-folder, set Build action to AndroidAsset in Properties
-        //  - Apple: Add to to root clientapp.ios-folder, set Build action to BundleResource
+        /**
+         * On click:
+         * Playing of the audiofile is stopped.
+         * The loadingPage is shown.
+         * MultipartFormDataContent for the request is build.
+         * If the Data can be set correctly the Request is forwarded to the backend-server.
+         * 
+         * On response:
+         * If the Statuscode of the response is successful (200), the levelOfDrunkenness is extracted from it.
+         * LoadingPage and RecordingPage are closed.
+         * Resultpage is loaded, levelOfDrunkenness is forwarded.
+         * If an error occurs or the statuscode is not successful the ErrorPage is loaded.
+         **/
         private async void PostToBackend_OnClicked(object sender, EventArgs e)
         {
             audioPlayer.Pause();
@@ -159,6 +179,8 @@ namespace ClientApp
             }
             
         }
+
+        // Following are the properties for valuebinding in the XAML.
 
         public Double PlayButtonWidth
         {
