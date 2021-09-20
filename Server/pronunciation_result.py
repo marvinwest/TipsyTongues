@@ -1,3 +1,6 @@
+# Data transfer object (DTO) to forward recognition result from pronunciation_recognizer to drunkenness_calculator.
+# Attributes are set in constructor.
+# Only getters, no setters. Once Constructed, the values should not change.
 class PronunciationResult:
 	def __init__(self, accuracy_score,
 		completeness_score,
