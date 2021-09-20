@@ -30,6 +30,11 @@
     <Folder Include="MessageBox\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="RecordingPage.xaml.cs">
+      <DependentUpon>RecordingPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Update="ErrorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -71,7 +71,7 @@ namespace ClientApp
         private async void SecondPage_OnClicked(object sender, EventArgs e)
         {
             audioPlayer.Pause();
-            await Navigation.PushAsync(new SecondPage());
+            await Navigation.PushAsync(new RecordingPage());
             Navigation.RemovePage(this);
         }
 

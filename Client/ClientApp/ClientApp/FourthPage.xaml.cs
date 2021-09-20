@@ -44,7 +44,7 @@ namespace ClientApp
 
         private async void SecondPage_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SecondPage());
+            await Navigation.PushAsync(new RecordingPage());
             Navigation.RemovePage(this);
         }
 

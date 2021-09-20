@@ -4,7 +4,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="ClientApp.SecondPage"
+    x:Class="ClientApp.RecordingPage"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     Title="Safe Area"
     ios:Page.UseSafeArea="true"
@@ -13,7 +13,6 @@
     <ContentPage.Content >
         <StackLayout BackgroundColor="Black">
             <Grid x:Name="mainGrid">
-
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.5*"/>
                     <RowDefinition Height="50*"/>
@@ -21,7 +20,6 @@
                     <RowDefinition Height="35*"/>
                     <RowDefinition Height="1.5*"/>
                 </Grid.RowDefinitions>
-
                 <StackLayout Grid.Row="1">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -29,15 +27,12 @@
                             <ColumnDefinition Width="90*"/>
                             <ColumnDefinition Width="5*"/>
                         </Grid.ColumnDefinitions>
-
                         <StackLayout Grid.Column="1">
-
                             <Frame
                                 HeightRequest="{Binding FrameHeight}"
                                 WidthRequest="{Binding FrameWidth}"
                                 CornerRadius="8"
                                 BackgroundColor="#262424">
-
                                 <StackLayout>
                                     <Label x:Name = "TipsyText"
                                            Text= "{Binding Sentence}"
@@ -88,14 +83,22 @@
                     </Grid>
                 </StackLayout>
                 <StackLayout Grid.Row="3">
-       
-                    <Label Text="HOLD THE BUTTON AND&#x0a;READ THE TEXT OUT LOUD" FontSize="20" TextColor="#FFF" FontFamily="fjallaOne" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
-                    <ImageButton x:Name="recordingButton" Source="record_button.png" Pressed="OnButtonPressed"
-                        Released="OnButtonReleased" HeightRequest="{Binding RecordingButtonHeight}" BackgroundColor="black" VerticalOptions="End"/>
+                    <Label Text="HOLD THE BUTTON AND&#x0a;READ THE TEXT OUT LOUD"
+                           FontSize="20"
+                           TextColor="#FFF"
+                           FontFamily="fjallaOne"
+                           VerticalOptions="End"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center" />
+                    <ImageButton x:Name="recordingButton" 
+                                 Source="record_button.png" 
+                                 Pressed="OnRecordingButtonPressed"
+                                 Released="OnRecordingButtonReleased"
+                                 HeightRequest="{Binding RecordingButtonHeight}"
+                                 BackgroundColor="black"
+                                 VerticalOptions="End"/>
                 </StackLayout>
             </Grid>
-
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

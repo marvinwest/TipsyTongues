@@ -23,7 +23,7 @@ namespace ClientApp
         {
             if (await PermissionService.checkOrGetMicrophonePermission() && await PermissionService.checkOrGetStoragePermission())
             {
-                await Navigation.PushAsync(new SecondPage());
+                await Navigation.PushAsync(new RecordingPage());
             }
             else
             {
