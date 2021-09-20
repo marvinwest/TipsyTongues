@@ -1,5 +1,7 @@
 import wave
 
+# Build audiofile from bytearray and given audio information.
+# Newly built audiofile is persisted to server.
 def convert_to_wave_and_save(filename,
 	byte_file,
 	channel_count,
