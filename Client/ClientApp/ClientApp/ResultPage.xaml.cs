@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ClientApp
 {
-    
-    public partial class FourthPage : ContentPage
+    /**
+     * ResultPage:
+     * The calculated result is displayed in the form of a filled beermug. Furthermore a sentence is shown.
+     * By click on the button on the bottom, the RecordingPage is loaded, so the user can try again.
+     **/
+    public partial class ResultPage : ContentPage
     {
         private ElementSizeService elementSizeService;
 
@@ -19,35 +17,46 @@ namespace ClientApp
 
         private Double frameHeight;
         private Double frameWidth;
-
         private Double levelOfDrunkennessImageHeight;
         private Double levelOfDrunkennessImageWidth;
-
         private Double homeButtonHeight;
         private Double homeButtonWidth;
 
-
-        public FourthPage(int levelOfDrunkenness)
+        /**
+         * On Initilization:
+         * ElementSizeService is loaded.
+         * Width and Height of the shown elements are calculated.
+         * ResultImage and ResultText are set according to the forwarded levelOfDrunkenness-Integer.
+         **/
+        public ResultPage(int levelOfDrunkenness)
         {
             elementSizeService = new ElementSizeService();
+
             FrameHeight = elementSizeService.calculateElementHeight(0.60);
             FrameWidth = elementSizeService.calculateElementWidth(0.9);
             LevelOfDrunkennessImageHeight = elementSizeService.calculateElementHeight(0.35);
             LevelOfDrunkennessImageWidth = elementSizeService.calculateElementWidth(0.9);
             HomeButtonHeight = elementSizeService.calculateElementHeight(0.125);
             HomeButtonWidth = elementSizeService.calculateElementWidth(0.9);
+
             BindingContext = this;
             BuildLevelOfDrunkennessDisplay(levelOfDrunkenness);
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        private async void SecondPage_OnClicked(object sender, EventArgs e)
+        /**
+         * On click the RecordingPage is loaded.
+         **/ 
+        private async void RecordingPage_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RecordingPage());
             Navigation.RemovePage(this);
         }
 
+        /**
+         * ResultImage and ResultText are set according to levelOfDrunkenness-Integer.
+         **/
         private async void BuildLevelOfDrunkennessDisplay(int levelOfDrunkenness)
         {
             switch (levelOfDrunkenness)
@@ -63,6 +72,8 @@ namespace ClientApp
                     break;
             }
         }
+
+        // Following are the properties for valuebinding in the XAML.
 
         public String LevelOfDrunkennessText
         {
@@ -83,7 +94,6 @@ namespace ClientApp
                 OnPropertyChanged("LevelOfDrunkenness");
             }
         }
-
 
         public Double FrameHeight
         {

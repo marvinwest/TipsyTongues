@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientApp.FourthPage"
+             x:Class="ClientApp.ResultPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              Title="Safe Area"
              ios:Page.UseSafeArea="true"
@@ -80,7 +80,7 @@
                                  WidthRequest="{Binding HomeButtonWidth}"
                                  HorizontalOptions="Center"
                                  VerticalOptions="Center"
-                                 Clicked="SecondPage_OnClicked"/>
+                                 Clicked="RecordingPage_OnClicked"/>
                 </StackLayout>
 
             </Grid>

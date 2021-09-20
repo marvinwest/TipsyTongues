@@ -1,14 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Net.Http;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Plugin.AudioRecorder;
 using Newtonsoft.Json.Linq;
-using Lottie.Forms;
 using Xamarin.Forms;
 
 namespace ClientApp
@@ -167,7 +162,7 @@ namespace ClientApp
 
                 // Forwards the returned levelOfDrunkenness to the Next Page
                 // Closes this Page and the loadingpage
-                await Navigation.PushAsync(new FourthPage(levelOfDrunkenness));
+                await Navigation.PushAsync(new ResultPage(levelOfDrunkenness));
                 Navigation.RemovePage(loadingPage);
                 Navigation.RemovePage(this);
             }

@@ -30,6 +30,9 @@
     <Folder Include="MessageBox\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="ResultPage.xaml.cs">
+      <DependentUpon>ResultPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="RecordingPage.xaml.cs">
       <DependentUpon>RecordingPage.xaml</DependentUpon>
     </Compile>
@@ -41,7 +44,7 @@
     <EmbeddedResource Update="ErrorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="FourthPage.xaml">
+    <EmbeddedResource Update="ResultPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="LoadingPage.xaml">
