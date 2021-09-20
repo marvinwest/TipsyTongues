@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Lottie.Forms;
+﻿using Xamarin.Forms;
 
 namespace ClientApp
 {
 
+    /**
+     * LoadingPage:
+     * Loading animation is shown using the Lottie-Framework (in XAML).
+     * Animation in the form of a beer that is filled.
+     **/
     public partial class LoadingPage : ContentPage
     {
 
@@ -19,5 +16,7 @@ namespace ClientApp
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
+
     }
+
 }
