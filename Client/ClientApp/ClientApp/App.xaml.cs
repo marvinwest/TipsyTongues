@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 [assembly: ExportFont("FjallaOne-Regular.ttf", Alias = "fjallaOne")]
 namespace ClientApp
@@ -8,12 +6,11 @@ namespace ClientApp
     
     public partial class App : Application
     {
+
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new MainPage());
-
         }
 
         protected override void OnStart()
@@ -27,5 +24,7 @@ namespace ClientApp
         protected override void OnResume()
         {
         }
+
     }
+
 }
