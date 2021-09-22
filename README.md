@@ -14,7 +14,7 @@ Design:
 - 15 seconds circle animation for recording: https://lottiefiles.com/share/ftbiikqh (with button), https://lottiefiles.com/share/wusiein9 (without button)
 
 
-Front End:
+Front-End:
 - cross compiled -> runs across multiple platforms (IOS, Android, Microsoft (opt.))
 - Xamarin (C#)
 - Visual Studio as IDE
@@ -36,7 +36,7 @@ Code Replication Steps:
 
 
 
-Back End:
+Back-End:
 - Uses Python Flask for serverside developing
 - Uses Azure Cognitive Services pronunciation recognition to compare given sentence to audiofile
 - Return Level of drunkenness based on the comparison
