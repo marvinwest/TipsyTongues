@@ -57,5 +57,5 @@ Code Replication Steps:
  
 
 Designer: Tabea Graszynski</br>
-Frontend: Jule Emily Buschmann</br>
-Backend: Marvin Westphal</br>
+Front-End: Jule Emily Buschmann</br>
+Back-End, Front-End: Marvin Westphal</br>
